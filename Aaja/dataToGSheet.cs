@@ -10,7 +10,7 @@ public class dataToGSheet : MonoBehaviour
     //in that way, it does fill out a google sheet using a form as an intermediary.
 
     //to consider:
-    // -some kind of security system for the form, or link protection.
+    // -some kind of security system for the form to make sure that it only accepts answers acquired in the game. 
 
     private string[] dataToSend;
     private string[] entryCodes;
@@ -24,12 +24,13 @@ public class dataToGSheet : MonoBehaviour
     //take the value there as the link.
     private string base_url;
 
-    //to find entry codes: (one per each question)
+    //to find entry codes: (one for each question)
     //in google form, click three dots on the right, then click get pre-filled link
     //inspect element
     //search for 'entry.'
-    //copy the value there. 'entry.somenumer'
+    //copy the value there. 'entry.somenumber'
 
+    //additionally:
     //make sure the google form doesn't have any settings that 
     //would stop it to be written to.
 
