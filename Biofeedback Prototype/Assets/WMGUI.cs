@@ -17,7 +17,6 @@ public class WMGUI : MonoBehaviour
     private int count;
     public GameObject wMCanvas;
     public GameObject dataCanvas; 
-    // enum Operator {add, sub};
     
     // Start is called before the first frame update
     void Start()
@@ -25,6 +24,7 @@ public class WMGUI : MonoBehaviour
         StartCoroutine(WMCoroutineMed1());
         dataCanvas.SetActive(false);
     }
+    // Handles switching of coroutines on button click
     public void CoroutineSwitcher()
     {
         switch (count)
@@ -352,6 +352,7 @@ public class WMGUI : MonoBehaviour
         dataCanvas.SetActive(true);
         count ++;
     }
+    //clears text areas after button click
     void ClearInputText() 
     {
         Answer1.text = "";
