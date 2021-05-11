@@ -1,3 +1,7 @@
+-> invitation
+
+// Marj section START
+=== invitation ===
 Part I: The Invitation
 Hello X! We are delighted to announce after reviewing hundreds of applications, you’ve been selected to interview for a summer internship with V Inc. In the next day or so, one of our HR representatives will be calling you to schedule an interview date. In the mean time, we would like to encourage you to learn a little more about our company by watching the informational video below.
 This video provides an overview about our summer internship program, and the company as a whole. Thank you and we look forward to meeting you very soon!
@@ -37,5 +41,112 @@ This video provides an overview about our summer internship program, and the com
             -> interviewStart
             
     * * (interviewStart) [Continue with the interview] \[I decided to continue with the interview.\]
-        To be continued...
-- -> END
+        \[To be continued...\]
+- -> manipulating_social_interactions_waiting_room
+// Marj section END
+
+
+// Marj section START
+=== manipulating_social_interactions_waiting_room ===
+X gets to Rm 1016. It is quite packed. She looks around. There are about 15 people waiting. Some are on their phones, others are chatting with each other…and some are reading books or just sitting staring into space. There’s only one other woman in the room besides herself. This woman is Asian. Of the 14 men, 8 are white, and 6 are Asian. 
+
+* [Find a seat] 
+She sits on the only available seat- next to an Asian man who begins to make small talk.
+
+Asian guy: “You’re here for the internship interview?”
+
+//X: “yes/ [or whatever variation of response X gives]”
+** "Yes."
+
+Asian guy: My name is Li Wang. You?
+
+//X: X
+*** "My name is X."
+
+Li: Cool. What college?
+
+//X: [whatever college she provides—I think we should provide her a college as part of her character, going in].
+**** "I went to \[insert college\]."
+
+Li: Sweet. Junior. M.I.T. Looks a little packed but they call people in quickly. I shouldn’t be too long now. Gets nerve-wracking just waiting in a room full of like…super smart people. See that guy over there with the red shirt? Also from M.I.T. His dad works for google. I’ll bet you he has an ‘in’ already. And the chic in the blue suit? [points to Asian woman]- total badass. Like … genius level smart! Seriously. Rumor has it that the big companies already scouting her for jobs after graduation.
+
+X: [responds however she responds].
+***** "\[insert response\]"
+
+Li: I hear they hire mostly- well, last year at least—and the year before that- mostly M.I.T and Stanford grads. Like, most of the senior execs in this division graduated from either M.I.T, Harvard, Stanford or UCLA. 
+
+// Intercom buzzes and calls out a number—D-031.
+****** \[The intercom buzzes and calls out a number-D-031.\]
+
+Li: That’s me! Gotta go! Good luck.
+
+- * [Head towards interview room] \[I headed towards the interview room.\]
+    -> manipulating_social_interactions_interview_room
+
+=== manipulating_social_interactions_interview_room ===
+X walks across the hall to Rm 1018. On the walls are photos of executives… All White men. She opens the door and sees a panel of 4 interviewers sitting at a long table. 3 lean towards each other, whispering/ talking about something. One is writing something in a folder. 
+
+* [Walk into the room]
+As she walks into the room, Interviewer \#5 comes in from a side door with a mug in hand. Looks at X and says “We’re out of coffee. What’s the status on the purchase order Lynette made last week? We’re supposed to restock when inventory hits 25%. Could you follow up on that please? I hate to micromanage but this is getting old!”
+
+He walks to sit in the empty chair at the panel.
+
+Interviewer \#3 points out that \#5 could be wrong about X: “ Er… wrong person, Stan. She’s not admin, she’s here for the interview. Right? Ms… X? D-035?”
+
+//X: [nods, says yes, whatever—something affirmative].
+** "Yes/something affirmative"
+
+\#5 doesn’t apologize. Simply says ‘Oh! Ok- have a seat Ms. X and let’s get started”.
+
+*** [Take a seat]
+X sits opposite the panel.
+
+\#1: Hello, X. Welcome to V, Inc. My name is A- this is B, C, D and E. We all are senior personnel in Division D- which is also one of the most crucial arms of the company. As a single division, we account for over 42% of the company’s annual revenue.
+
+**** [...]
+ As you know, our company is rated among top \#3 in the industry. Our success is mostly a result of our innovation in the field. We develop cutting edge products and the rest of the industry –and the market as well-- looks to us to determine the direction of the future, right? 
+ 
+ But here’s the thing—the secret to our success lies on being able to tap talent, fresh talent. So we are constantly looking to push the envelope ourselves, in terms what it means to be innovative and dominant in the field. So we look for and hire young people like yourself, who are not only talented, but also can bring to the table fresh, creative ideas. 
+ 
+ Typically, the internship is a bridge to becoming an employee within the organization. We invest heavily in our interns because we don’t just see them as gophers—but as valuable, future employees. 
+ 
+***** [...]
+\#2 interjects… “yes and to what \#1 just said—because we are investing in you, we have very high standards and expectations around work quality and productivity. But I’ll say, should you be hired, you’ll have it made-even if you don’t end up with a position here.”
+
+****** [...]
+\#5: “And that’s what makes these internships so competitive. Having done an internship at V Inc is very attractive to a lot of companies out there—although to be honest, we tend to keep our interns- so the vetting process- of which this interview is a part—is very rigorous. We choose the best of the best. We receive about 1200 applications a year; interview about 50 candidates and only hire 12- a whopping 1%. So—you should consider it a success that you’ve made it this far.”
+
+******* [...]
+\#4: Alright, enough about us and the company. Tell us a little about yourself. I can see you’re a junior at [insert X’s college—definitely not the high end ones they come from].
+
+As \#4 mentions the college, 2 interviewers look at each other and then look down.
+
+X:  -----
+
+- \#1: What are your skills and how do you think they can contribute to what our division goals?
+
+//X: -------
+******** \[insert response 1\]
+            -> interviewLearn
+******** \[insert response 2\]
+            -> interviewLearn
+
+- - (interviewLearn) \#2:  What are you hoping to learn from us this summer?
+
+//X: -----------
+******** \[insert response 1\]
+                -> interviewCommStyle
+******** \[insert response 2\]
+                -> interviewCommStyle
+
+- - - (interviewCommStyle) \#3:  What’s your communication style? I ask because most of the senior employees that you will be interfacing with in Division D are men – and we generally tend to be straight shooters who do not mince words & tell it like it is. I know some women might find that offensive so…. I guess I’m wondering how comfortable you would feel about that level of communication.
+
+//X: -------
+******** \[insert response 1\]
+            -> END
+******** \[insert response 2\]
+            -> END
+
+// Marj section END
+
+
