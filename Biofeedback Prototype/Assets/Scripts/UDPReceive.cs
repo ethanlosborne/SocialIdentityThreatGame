@@ -1,19 +1,3 @@
-
-/*
- 
-    -----------------------
-    UDP-Receive (send to)
-    -----------------------
-    // [url]http://msdn.microsoft.com/de-de/library/bb979228.aspx#ID0E3BAC[/url]
-   
-   
-    // > receive
-    // 127.0.0.1 : 8051
-   
-    // send
-    // nc -u 127.0.0.1 8051
- 
-*/
 using UnityEngine;
 using System.Collections;
 
@@ -38,7 +22,7 @@ public class UDPReceive : MonoBehaviour
 
     // infos
     public string lastReceivedUDPPacket = "";
-    public string allReceivedUDPPackets = ""; // clean up this from time to time!
+    public string allReceivedUDPPackets = ""; 
 
 
     // start from shell
@@ -76,7 +60,7 @@ public class UDPReceive : MonoBehaviour
     // init
     private void init()
     {
-        // Endpunkt definieren, von dem die Nachrichten gesendet werden.
+        
         print("UDPSend.init()");
 
         // define port
@@ -86,12 +70,6 @@ public class UDPReceive : MonoBehaviour
         print("Sending to 127.0.0.1 : " + port);
         print("Test-Sending to this Port: nc -u 127.0.0.1  " + port + "");
 
-
-        // ----------------------------
-        // Abhören
-        // ----------------------------
-        // Lokalen Endpunkt definieren (wo Nachrichten empfangen werden).
-        // Einen neuen Thread für den Empfang eingehender Nachrichten erstellen.
         receiveThread = new Thread(
             new ThreadStart(ReceiveData));
         receiveThread.IsBackground = true;
@@ -109,14 +87,10 @@ public class UDPReceive : MonoBehaviour
 
             try
             {
-                // Bytes empfangen.
                 IPEndPoint anyIP = new IPEndPoint(IPAddress.Any, 0);
                 byte[] data = client.Receive(ref anyIP);
 
-                // Bytes mit der UTF8-Kodierung in das Textformat kodieren.
                 string text = Encoding.UTF8.GetString(data);
-
-                // Den abgerufenen Text anzeigen.
                 print(">> " + text);
 
                 // latest UDPpacket
