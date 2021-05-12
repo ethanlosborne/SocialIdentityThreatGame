@@ -7,12 +7,6 @@
       "dependencies": {},
       "url": "https://package.openupm.com"
     },
-    "com.needle.auto-installer": {
-      "version": "file:installer.com.inklestudios.ink-unity-integration",
-      "depth": 0,
-      "source": "embedded",
-      "dependencies": {}
-    },
     "com.unity.2d.sprite": {
       "version": "1.0.0",
       "depth": 0,
