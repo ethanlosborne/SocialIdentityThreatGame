@@ -51,24 +51,15 @@ public class UDPReceive : MonoBehaviour
         Rect rectObj = new Rect(40, 10, 200, 400);
         GUIStyle style = new GUIStyle();
         style.alignment = TextAnchor.UpperLeft;
-        GUI.Box(rectObj, "# UDPReceive\n127.0.0.1 " + port + " #\n"
-                    + "shell> nc -u 127.0.0.1 : " + port + " \n"
-                    + "\nLast Packet: \n" + lastReceivedUDPPacket
-                , style);
+        GUI.Box(rectObj, lastReceivedUDPPacket, style);
     }
 
     // init
     private void init()
     {
-        
-        print("UDPSend.init()");
 
         // define port
         port = 8051;
-
-        // status
-        print("Sending to 127.0.0.1 : " + port);
-        print("Test-Sending to this Port: nc -u 127.0.0.1  " + port + "");
 
         receiveThread = new Thread(
             new ThreadStart(ReceiveData));
@@ -93,8 +84,11 @@ public class UDPReceive : MonoBehaviour
                 string text = Encoding.UTF8.GetString(data);
                 print(">> " + text);
 
+                string[] heartRateData = text.Split(';');
+
+
                 // latest UDPpacket
-                lastReceivedUDPPacket = text;
+                lastReceivedUDPPacket = "Heart Rate: " + heartRateData[3] + "\nMin Heart Rate: " + heartRateData[4] + "\nMax Heart Rate: " + heartRateData[5];
 
                 // ....
                 allReceivedUDPPackets = allReceivedUDPPackets + text;
