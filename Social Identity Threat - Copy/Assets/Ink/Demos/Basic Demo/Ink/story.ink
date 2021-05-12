@@ -37,5 +37,31 @@ This video provides an overview about our summer internship program, and the com
             -> interviewStart
             
     * * (interviewStart) [Continue with the interview] \[I decided to continue with the interview.\]
-        To be continued...
+    On this day X has been invited to the company’s campus for an interview. Her appointment is set for 2:30pm. She walks into the building and checks in at the security desk; There are two security guards (men) at the front door—one Black, another Hispanic. X checks in at the security desk. She presents her interview card, and states that she is interviewing with Division D.
+    Black Guard looks at her interview card and ID, checks her name on an ipad (or computer) and says: “10th Floor, Main reception area- right across the elevators.” 
+    X goes through security and is allowed into the foyer. It’s exquisite —well decorated, people in suits (men, mostly) walking about hurriedly, minding their own business. There seems to be a sense of urgency in this work environment. 
+    * * * [Head to the elevators] \[I walked to the elevators.\]
+    X heads to the elevator. A cleaning lady (White woman) walks by with a cleaning cart and says ‘Hello’ to X as she continues on her way.
+    * * * * [Press the 10th floor button] \[I pressed the 10th floor button.\]
+    X takes the elevator to the 10th floor. Walks straight to the reception area and meets receptionist; a Black woman in her mid-thirties, with a short Afro.
+    Receptionist: Good afternoon and welcome to Division D. How may I help you?
+    X: [ this is free flow and X will have to state in her own words that she is there for the interview].
+    Receptionist: The admin assistant interviews were done an hour ago. And that would have been down the hall, Room 1015. Sorry. 
+    X: [ states that she is here for the internship interview]
+    Receptionist:  OHHH! I’m so sorry…we’re hosting 2 interviews today and one just wrapped up. What’s your name sweetie? 
+    X: X last name
+    Receptionist: Types into a computer. Makes small talk.
+    Wow! Engineering huh? You must be super smart [or a chop, or a genius]! Over 1000 applications each year for those positions and only about 10 make the final cut (she smiles at X).
+    Receptionist prints out a paper with a number on it.  Gives the paper to X.
+    OK. Your ticket number is D035. Go to the waiting area, room 1016-down the hall to your right-first door-- and wait for your number to be called over the intercom. The interview room will be RM 1018 directly opposite the waiting area. Shouldn’t be a long wait. Good luck.
+    * * * * *  [Respond to the receptionist] 
+    * * * * * [Don't respond to the receptionist]
+    -> social_interaction_manipulation
+    === social_interaction_manipulation ===
+
+    
+
+
+
+    
 - -> END
