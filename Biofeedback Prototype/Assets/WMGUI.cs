@@ -6,6 +6,9 @@ using UnityEngine.UI;
 
 public class WMGUI : MonoBehaviour
 {
+    [SerializeField] private Text testCounterLabel;
+    [SerializeField] private Text nextButtonText;
+
     public Text Box1;
     public Text Box2;
     public Text Box3;
@@ -13,11 +16,11 @@ public class WMGUI : MonoBehaviour
     public InputField Answer1;
     public InputField Answer2;
     public InputField Answer3;
-    public InputField Answer4;
-    private int count;
+    public InputField Answer4;  
     public GameObject wMCanvas;
-    public GameObject dataCanvas; 
-    
+    public GameObject dataCanvas;
+
+    public static int count;
     // Start is called before the first frame update
     void Start()
     {   
@@ -25,48 +28,52 @@ public class WMGUI : MonoBehaviour
         dataCanvas.SetActive(false);
     }
     // Handles switching of coroutines on button click
+    public void next_test()
+    {
+        if (count == 5)
+        {
+            nextButtonText.text = "Submit";
+        }       
+
+        CoroutineSwitcher();       
+    }
+
     public void CoroutineSwitcher()
     {
+        wMCanvas.SetActive(true);
+        ClearInputText();
+        dataCanvas.SetActive(false);
+        
+        if ( count + 1 < 7 ) testCounterLabel.text = "Test " + (count + 1).ToString() + " / 6";
+
         switch (count)
         {
             case 1:
                 StartCoroutine(WMCoroutineMed2());
-                wMCanvas.SetActive(true);
-                dataCanvas.SetActive(false);
-                ClearInputText();
                 break;
             case 2:
-                StartCoroutine(WMCoroutineMed3());
-                wMCanvas.SetActive(true);
-                dataCanvas.SetActive(false);
-                ClearInputText();
+                StartCoroutine(WMCoroutineMed3());               
                 break;
             case 3:
                 StartCoroutine(WMCoroutineHard1());
-                wMCanvas.SetActive(true);
-                dataCanvas.SetActive(false);
-                ClearInputText();
                 break;
             case 4:
                 StartCoroutine(WMCoroutineHard2());
-                wMCanvas.SetActive(true);
-                dataCanvas.SetActive(false);
-                ClearInputText();
                 break;
             case 5:
                 StartCoroutine(WMCoroutineHard3());
-                wMCanvas.SetActive(true);
-                dataCanvas.SetActive(false);
-                ClearInputText();
                 break;
             default:
                 Debug.Log("Default case");
+                //Application.Quit();
                 break;
         }
+        /*
         if (count >= 6)
         {
             StopCoroutine(WMCoroutineHard3());
         }
+        */
     }
     IEnumerator WMCoroutineMed1()
     {
@@ -107,8 +114,9 @@ public class WMGUI : MonoBehaviour
         Box4.text = " ";
 
         yield return new WaitForSeconds(3.0f);
-        wMCanvas.SetActive(false);
-        dataCanvas.SetActive(true);
+        //wMcanvas.SetActive(false);
+        clearBoxTest();
+        accept_data();
         count ++;
         
     }
@@ -156,8 +164,9 @@ public class WMGUI : MonoBehaviour
         Box4.text = " ";
         
         yield return new WaitForSeconds(3.0f);
-        wMCanvas.SetActive(false);
-        dataCanvas.SetActive(true);
+        //wMcanvas.SetActive(false);
+        clearBoxTest();
+        accept_data();
         count ++;
     }
     IEnumerator WMCoroutineMed3()
@@ -204,8 +213,9 @@ public class WMGUI : MonoBehaviour
         Box4.text = " ";
         
         yield return new WaitForSeconds(3.0f);
-        wMCanvas.SetActive(false);
-        dataCanvas.SetActive(true);
+        //wMcanvas.SetActive(false);
+        clearBoxTest();
+        accept_data();
         count ++;
     }
     IEnumerator WMCoroutineHard1()
@@ -252,8 +262,9 @@ public class WMGUI : MonoBehaviour
         Box4.text = " ";
         
         yield return new WaitForSeconds(3.0f);
-        wMCanvas.SetActive(false);
-        dataCanvas.SetActive(true);
+        //wMcanvas.SetActive(false);
+        clearBoxTest();
+        accept_data();
         count ++;
     }
     IEnumerator WMCoroutineHard2()
@@ -300,8 +311,9 @@ public class WMGUI : MonoBehaviour
         Box4.text = " ";
         
         yield return new WaitForSeconds(3.0f);
-        wMCanvas.SetActive(false);
-        dataCanvas.SetActive(true);
+        //wMcanvas.SetActive(false);
+        clearBoxTest();
+        accept_data();
         count ++;
     }
     IEnumerator WMCoroutineHard3()
@@ -348,8 +360,9 @@ public class WMGUI : MonoBehaviour
         Box4.text = " ";
         
         yield return new WaitForSeconds(3.0f);
-        wMCanvas.SetActive(false);
-        dataCanvas.SetActive(true);
+        //wMcanvas.SetActive(false);
+        clearBoxTest();
+        accept_data();
         count ++;
     }
     //clears text areas after button click
@@ -359,5 +372,22 @@ public class WMGUI : MonoBehaviour
         Answer2.text = "";
         Answer3.text = "";
         Answer4.text = "";
+    }
+
+    void accept_data()
+    {
+        dataCanvas.SetActive(true);
+        Answer1.interactable = true;
+        Answer2.interactable = true;
+        Answer3.interactable = true;
+        Answer4.interactable = true;
+}
+
+    void clearBoxTest()
+    {
+        Box1.text = "";
+        Box2.text = "";
+        Box3.text = "";
+        Box4.text = "";
     }
 }

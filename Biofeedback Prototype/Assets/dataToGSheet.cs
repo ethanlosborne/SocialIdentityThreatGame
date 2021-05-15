@@ -13,8 +13,13 @@ public class dataToGSheet : MonoBehaviour
     //to consider:
     // -some kind of security system for the form to make sure that it only accepts answers acquired in the game. 
 
-    private string[] dataToSend;
+    private string[] workingData; //array of data to facilitate manipulation.
+    private string[] dataToSend; //array of strings that will be used to collect data.
     [SerializeField] private string[] entryCodes;
+
+    //data collection
+    private double medAvg;
+    private double hardAvg;
 
     //to find url:
     //in google form, click send button.
@@ -31,53 +36,74 @@ public class dataToGSheet : MonoBehaviour
     //search for 'entry.'
     //copy the value there. format is: 'entry.somenumber'
 
-    //additionally:
-    //make sure the google form doesn't have any settings that 
-    //would stop it to be written to.
+    void Awake()
+    {       
+        dataToSend = new string[9];
+        for (int i = 0; i < dataToSend.Length; i++)
+        {
+            dataToSend[i] = "data to send " + i;
+        }
+
+        med1ans = new string[4] { "13", "11", "-1", "-1" };
+        med2ans = new string[4] { "13", "11", "-1", "-1" };
+        med3ans = new string[4] { "13", "11", "-1", "-1" };
+        hard1ans = new string[4] { "13", "11", "-1", "-1" };
+        hard2ans = new string[4] { "13", "11", "-1", "-1" };
+        hard3ans = new string[4] { "13", "11", "-1", "-1" };
+        answers = new string[][] { med1ans, med2ans, med3ans, hard1ans, hard2ans, hard3ans };
+    }
+    //answer arrays  
+    string[] med1ans;
+    string[] med2ans;
+    string[] med3ans;
+    string[] hard1ans;
+    string[] hard2ans;
+    string[] hard3ans;
+    string[][] answers;
 
     public void Send()
     {
-        //To add later?
-        //because there will be multiple tests, there should also be a field that specifies
-        //what test these answers are for. include a test id as some element of dataToSend.
-        // - will need to go in and modify the form too.
-        
-        
-        //disable button - one submission per person.
-        gameObject.transform.GetChild(8).GetComponent<Button>().interactable = false;
+        //testing with dummy data
+        //StartCoroutine(Post(dataToSend, entryCodes)); return;
 
         //here, we'll recuperate the user's input from the text fields as well.
-        dataToSend = new string[9]; //or 9?
+        workingData = new string[9]; //or 9?
 
         //user answers
         //argument to retrieve_input() is the child's position in the hierarchy - if it changes there, it must change here as well.
-        dataToSend[0] = retrieve_input(4);
-        dataToSend[1] = retrieve_input(5);
-        dataToSend[2] = retrieve_input(6);
-        dataToSend[3] = retrieve_input(7);
+        workingData[0] = retrieve_input(4);
+        workingData[1] = retrieve_input(5);
+        workingData[2] = retrieve_input(6);
+        workingData[3] = retrieve_input(7);
 
         //correct answers:
         // -left with the results from the current running test for now.
         //can retrieve an int array of final answers if different tests have different answers.
         //e.g. dataToSend[4] through [7] = WMGUI.some static array[0] through [3]
-        dataToSend[4] = "13";
-        dataToSend[5] = "11";
-        dataToSend[6] = "-1";
-        dataToSend[7] = "-1";
-        
-        //lastly, calc the overall accuracy.
-        int accuracy = calc_accuracy(dataToSend);
-        dataToSend[8] = accuracy + "%";
-
-        //test to make sure the data is correct
-        /*
-        for (int i = 0; i < 9; i++)
+        for (int i = 4; i < 8; i++)
         {
-            Debug.Log("dataToSend[" + i + "]: " + dataToSend[i]);
+            workingData[i] = answers[WMGUI.count-1][i-4];
         }
-        */    
-        StartCoroutine(Post(dataToSend, entryCodes));
 
+        //lastly, calc the accuracy.
+        dataToSend[WMGUI.count - 1] = calc_accuracy(workingData).ToString();
+
+        
+
+        if (WMGUI.count == 6)
+        {
+            //lock form and submit. we're done here.
+            //test to make sure the data is correct
+            /*
+            for (int i = 0; i < 9; i++)
+            {
+                Debug.Log("dataToSend[" + i + "]: " + dataToSend[i]);
+            }
+            */
+            
+            gameObject.transform.GetChild(8).GetComponent<Button>().interactable = false;
+            StartCoroutine(Post(dataToSend, entryCodes));
+        }
     }
 
     string retrieve_input(int child)
@@ -86,7 +112,6 @@ public class dataToGSheet : MonoBehaviour
         gameObject.transform.GetChild(child).GetComponent<InputField>().interactable = false;
         return gameObject.transform.GetChild(child).transform.GetChild(2).GetComponent<Text>().text;
     }
-
     int calc_accuracy(string[] data)
     {
         //hardcoded to assume there are only 4 answer fields. 
@@ -98,16 +123,39 @@ public class dataToGSheet : MonoBehaviour
                 acc += 25;
             }
         }
+ 
+        if ( WMGUI.count < 4)
+        {
+            medAvg += (double)acc;
+            if (WMGUI.count == 3)
+            {
+                medAvg = medAvg / 3;
+                dataToSend[6] = medAvg.ToString();
+            }
+        }
+        else
+        {
+            hardAvg += (double)acc;
+            if (WMGUI.count == 6)
+            {
+                hardAvg = hardAvg / 3;
+                dataToSend[7] = hardAvg.ToString();
+
+
+                dataToSend[8] = ((medAvg + hardAvg) / 2).ToString();
+            }
+        }
         return acc;
     }
 
     IEnumerator Post(string[] s, string[] e)
     {
+        Debug.Log("sending post");
         WWWForm form = new WWWForm();
 
         for (int i = 0; i < s.Length; i++)
         {
-            form.AddField(e[i], s[i]);
+            form.AddField(e[i], s[i]+ "%");
         }
 
         UnityWebRequest www = UnityWebRequest.Post(base_url, form);
