@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 using System;
 using System.Text;
@@ -22,7 +23,8 @@ public class UDPReceive : MonoBehaviour
 
     // infos
     public string lastReceivedUDPPacket = "";
-    public string allReceivedUDPPackets = ""; 
+    public string allReceivedUDPPackets = "";
+
 
 
     // start from shell
@@ -45,14 +47,6 @@ public class UDPReceive : MonoBehaviour
         init();
     }
 
-    // OnGUI
-    void OnGUI()
-    {
-        Rect rectObj = new Rect(40, 10, 200, 400);
-        GUIStyle style = new GUIStyle();
-        style.alignment = TextAnchor.UpperLeft;
-        GUI.Box(rectObj, lastReceivedUDPPacket, style);
-    }
 
     // init
     private void init()
@@ -62,7 +56,7 @@ public class UDPReceive : MonoBehaviour
         port = 8051;
 
         receiveThread = new Thread(
-            new ThreadStart(ReceiveData));
+        new ThreadStart(ReceiveData));
         receiveThread.IsBackground = true;
         receiveThread.Start();
 
@@ -82,13 +76,12 @@ public class UDPReceive : MonoBehaviour
                 byte[] data = client.Receive(ref anyIP);
 
                 string text = Encoding.UTF8.GetString(data);
-                print(">> " + text);
 
                 string[] heartRateData = text.Split(';');
 
 
                 // latest UDPpacket
-                lastReceivedUDPPacket = "Heart Rate: " + heartRateData[3] + "\nMin Heart Rate: " + heartRateData[4] + "\nMax Heart Rate: " + heartRateData[5];
+                lastReceivedUDPPacket = heartRateData[3];
 
                 // ....
                 allReceivedUDPPackets = allReceivedUDPPackets + text;
@@ -108,5 +101,13 @@ public class UDPReceive : MonoBehaviour
         allReceivedUDPPackets = "";
         return lastReceivedUDPPacket;
     }
+
+    
 }
+
+
+
+
+
+
 
