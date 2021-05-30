@@ -14,10 +14,16 @@ public class BasicInkExample : MonoBehaviour {
 	}
 
 	// Creates a new Story object with the compiled story which we can then play!
+    // Also, links external functions.
 	void StartStory () {
 		story = new Story (inkJSONAsset.text);
         if(OnCreateStory != null) OnCreateStory(story);
-		RefreshView();
+
+        //link external functions
+        dummy.link_external_functions(story);
+
+
+        RefreshView();
 	}
 	
 	// This is the main function called every time the story changes. It does a few things:
@@ -98,6 +104,8 @@ public class BasicInkExample : MonoBehaviour {
 	[SerializeField]
 	private TextAsset inkJSONAsset = null;
 	public Story story;
+
+    [SerializeField] private DummyUI dummy;
 
 	[SerializeField]
 	private Canvas canvas = null;

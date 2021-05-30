@@ -1,12 +1,25 @@
+//Link external files here.
+EXTERNAL dummy_to_color(colorIndex)
+
+//Stop linking external functions.
+//You can call one like so:
+//~ dummy_to_color(0)
+
+
 -> invitation
 
 // Marj section START
 === invitation ===
 Part I: The Invitation
+
 Hello X! We are delighted to announce after reviewing hundreds of applications, you’ve been selected to interview for a summer internship with V Inc. In the next day or so, one of our HR representatives will be calling you to schedule an interview date. In the mean time, we would like to encourage you to learn a little more about our company by watching the informational video below.
 This video provides an overview about our summer internship program, and the company as a whole. Thank you and we look forward to meeting you very soon!
+
 *   [Watch the video] \[I started watching the video.\]
     [intro music with voice over]: Hello, I’m Emily Jacobs, Director of the Summer Internship Program at V-Inc. First, I’d like to say congratulations on making it this far in the interview process. This makes you just one of 50 applicants to make it through our highly rigorous and selective process! I want to welcome you to a brief introduction to our company, V-Inc.
+
+    //ui stuff
+    ~ dummy_to_color(0)
 
     V-Inc has been an innovative company since its inception in 1999, when it started out as a company providing I.T. training.  It eventually evolved to software development, focusing initially on customized software, and today V-Inc is a 800 Billion dollar global corporation with an unrivaled portfolio of end to end cutting edge solutions and services from software product development, to block-chain technologies and other smart contract related products. Ushering businesses into a new era of technology is what we do best at V-Inc. This is our mission.
 
@@ -42,29 +55,33 @@ This video provides an overview about our summer internship program, and the com
 
     * * (interviewStart) [Continue with the interview] \[I decided to continue with the interview.\]
         \[To be continued...\]
+
+//ui stuff
+~ dummy_to_color(1)
+
 - -> manipulating_social_interactions_waiting_room
 // Marj section END
 
 // Mason section START
 === enter_building_reception ===
     On this day X has been invited to the company’s campus for an interview. Her appointment is set for 2:30pm. She walks into the building and checks in at the security desk; There are two security guards (men) at the front door—one Black, another Hispanic. X checks in at the security desk. She presents her interview card, and states that she is interviewing with Division D.
-    Black Guard looks at her interview card and ID, checks her name on an ipad (or computer) and says: “10th Floor, Main reception area- right across the elevators.” 
-    X goes through security and is allowed into the foyer. It’s exquisite —well decorated, people in suits (men, mostly) walking about hurriedly, minding their own business. There seems to be a sense of urgency in this work environment. 
+    Black Guard looks at her interview card and ID, checks her name on an ipad (or computer) and says: “10th Floor, Main reception area- right across the elevators.”
+    X goes through security and is allowed into the foyer. It’s exquisite —well decorated, people in suits (men, mostly) walking about hurriedly, minding their own business. There seems to be a sense of urgency in this work environment.
     * * * [Head to the elevators] \[I walked to the elevators.\]
     X heads to the elevator. A cleaning lady (White woman) walks by with a cleaning cart and says ‘Hello’ to X as she continues on her way.
     * * * * [Press the 10th floor button] \[I pressed the 10th floor button.\]
     X takes the elevator to the 10th floor. Walks straight to the reception area and meets receptionist; a Black woman in her mid-thirties, with a short Afro.
     Receptionist: Good afternoon and welcome to Division D. How may I help you?
     X: [ this is free flow and X will have to state in her own words that she is there for the interview].
-    Receptionist: The admin assistant interviews were done an hour ago. And that would have been down the hall, Room 1015. Sorry. 
+    Receptionist: The admin assistant interviews were done an hour ago. And that would have been down the hall, Room 1015. Sorry.
     X: [ states that she is here for the internship interview]
-    Receptionist:  OHHH! I’m so sorry…we’re hosting 2 interviews today and one just wrapped up. What’s your name sweetie? 
+    Receptionist:  OHHH! I’m so sorry…we’re hosting 2 interviews today and one just wrapped up. What’s your name sweetie?
     X: X last name
     Receptionist: Types into a computer. Makes small talk.
     Wow! Engineering huh? You must be super smart [or a chop, or a genius]! Over 1000 applications each year for those positions and only about 10 make the final cut (she smiles at X).
     Receptionist prints out a paper with a number on it.  Gives the paper to X.
     OK. Your ticket number is D035. Go to the waiting area, room 1016-down the hall to your right-first door-- and wait for your number to be called over the intercom. The interview room will be RM 1018 directly opposite the waiting area. Shouldn’t be a long wait. Good luck.
-    * * * * *  [Respond to the receptionist] 
+    * * * * *  [Respond to the receptionist]
         -> manipulating_social_interactions_waiting_room
     * * * * * [Don't respond to the receptionist]
         -> manipulating_social_interactions_waiting_room
