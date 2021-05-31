@@ -13,21 +13,35 @@ public class HeartRateManager : MonoBehaviour
     public GameObject moderate_Heart;
     public GameObject high_Heart;
     public GameObject maximum_Heart;
+    private int integer_heart_rate;
+    private int updateCount = 0;
+    private int shouldIncrement = 0;
 
 
     void Awake()
     {
         hrText = this.gameObject.GetComponent<Text>();
-        heartRatePacket = this.gameObject.GetComponent<UDPReceive>().lastReceivedUDPPacket;
+        var heartRatePacket = UnityEngine.Random.Range(60, 140);
+        integer_heart_rate = heartRatePacket;
     }
     
     // Update is called once per frame
     void Update()
     {
-        heartRatePacket = this.gameObject.GetComponent<UDPReceive>().lastReceivedUDPPacket;
-        heartRatePacket = heartRatePacket.Trim();
-        hrText.text = heartRatePacket;
-        int integer_heart_rate = int.Parse(heartRatePacket);
+        updateCount++;
+        shouldIncrement++;
+        var heartRatePacket = UnityEngine.Random.Range(60, 140);
+        if (shouldIncrement >= 150)
+        {
+            shouldIncrement = 0;
+            integer_heart_rate++;
+        }
+        if (updateCount >= 500)
+        {
+            updateCount = 0;
+            integer_heart_rate = heartRatePacket;
+        }
+        hrText.text = integer_heart_rate.ToString();
         if (integer_heart_rate > 60 && integer_heart_rate < 80)
         {
             UnityEngine.Debug.Log("Low");
