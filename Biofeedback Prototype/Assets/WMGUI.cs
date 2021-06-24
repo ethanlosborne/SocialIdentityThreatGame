@@ -68,303 +68,217 @@ public class WMGUI : MonoBehaviour
                 //Application.Quit();
                 break;
         }
-        /*
-        if (count >= 6)
-        {
-            StopCoroutine(WMCoroutineHard3());
-        }
-        */
+
     }
+
+    void update_boxes(string b1, string b2, string b3, string b4)
+    {
+        Box1.text = b1;
+        Box2.text = b2;
+        Box3.text = b3;
+        Box4.text = b4;
+    }
+
+
     IEnumerator WMCoroutineMed1()
     {
+        update_boxes("7", "4", "5", "3");
+
         yield return new WaitForSeconds(6.5f);
-        Box1.text = "+" + 5;
-        Box2.text = " ";
-        Box3.text = " ";
-        Box4.text = " ";
-        
-        yield return new WaitForSeconds(3.0f);
-        Box4.text = "+" + 6;
-        Box1.text = " ";
-        Box2.text = " ";
-        Box3.text = " ";
+
+        update_boxes("", "", "+1", "");
 
         yield return new WaitForSeconds(3.0f);
-        Box3.text = "-" + 1;
-        Box1.text = " ";
-        Box2.text = " ";
-        Box4.text = " ";
-        
-        yield return new WaitForSeconds(3.0f);  
-        Box2.text = "+" + 4;
-        Box1.text = " ";
-        Box3.text = " ";
-        Box4.text = " ";
-        
-        yield return new WaitForSeconds(3.0f);
-        Box4.text = "-" + 8;
-        Box1.text = " ";
-        Box2.text = " ";
-        Box3.text = " ";
-        
-        yield return new WaitForSeconds(3.0f);
-        Box3.text = "-" + 3;
-        Box1.text = " ";
-        Box2.text = " ";
-        Box4.text = " ";
+
+        update_boxes("", "+1", "", "");
 
         yield return new WaitForSeconds(3.0f);
-        //wMcanvas.SetActive(false);
-        clearBoxTest();
+
+        update_boxes("+8", "", "", "");
+
+        yield return new WaitForSeconds(3.0f);
+
+        update_boxes("", "", "", "+5");
+
+        yield return new WaitForSeconds(3.0f);
+
+        update_boxes("", "", "+3", "");
+
+        yield return new WaitForSeconds(3.0f);
+
+        update_boxes("", "", "", "");
+
+        yield return new WaitForSeconds(3.0f);
+
         accept_data();
-        count ++;
-        
+        count ++;        
     }
     IEnumerator WMCoroutineMed2()
     {
-        Box1.text = "1";
-        Box2.text = "2";
-        Box3.text = "3";
-        Box4.text = "4";
+        update_boxes("7", "7", "2", "9");
 
         yield return new WaitForSeconds(6.5f);
-        Box1.text = "+" + 5;
-        Box2.text = " ";
-        Box3.text = " ";
-        Box4.text = " ";
-        
-        yield return new WaitForSeconds(3.0f);
-        Box4.text = "+" + 6;
-        Box1.text = " ";
-        Box2.text = " ";
-        Box3.text = " ";
+
+        update_boxes("", "", "+7", "");
 
         yield return new WaitForSeconds(3.0f);
-        Box3.text = "-" + 1;
-        Box1.text = " ";
-        Box2.text = " ";
-        Box4.text = " ";
-        
-        yield return new WaitForSeconds(3.0f);  
-        Box2.text = "+" + 4;
-        Box1.text = " ";
-        Box3.text = " ";
-        Box4.text = " ";
-        
+
+        update_boxes("", "", "", "+8");
+
         yield return new WaitForSeconds(3.0f);
-        Box4.text = "-" + 8;
-        Box1.text = " ";
-        Box2.text = " ";
-        Box3.text = " ";
-        
+
+        update_boxes("+1", "", "", "");
+
         yield return new WaitForSeconds(3.0f);
-        Box3.text = "-" + 3;
-        Box1.text = " ";
-        Box2.text = " ";
-        Box4.text = " ";
-        
+
+        update_boxes("", "", "-1", "");
+
         yield return new WaitForSeconds(3.0f);
-        //wMcanvas.SetActive(false);
-        clearBoxTest();
+
+        update_boxes("", "-2", "", "");
+
+        yield return new WaitForSeconds(3.0f);
+
+        update_boxes("", "", "", "");
+
+        yield return new WaitForSeconds(3.0f);
+
         accept_data();
-        count ++;
+        count++;
     }
     IEnumerator WMCoroutineMed3()
     {
-        Box1.text = "1";
-        Box2.text = "2";
-        Box3.text = "3";
-        Box4.text = "4";
+        update_boxes("3", "1", "2", "8");
 
         yield return new WaitForSeconds(6.5f);
-        Box1.text = "+" + 5;
-        Box2.text = " ";
-        Box3.text = " ";
-        Box4.text = " ";
-        
-        yield return new WaitForSeconds(3.0f);
-        Box4.text = "+" + 6;
-        Box1.text = " ";
-        Box2.text = " ";
-        Box3.text = " ";
+
+        update_boxes("", "", "", "-2");
 
         yield return new WaitForSeconds(3.0f);
-        Box3.text = "-" + 1;
-        Box1.text = " ";
-        Box2.text = " ";
-        Box4.text = " ";
-        
-        yield return new WaitForSeconds(3.0f);  
-        Box2.text = "+" + 4;
-        Box1.text = " ";
-        Box3.text = " ";
-        Box4.text = " ";
-        
+
+        update_boxes("-2", "", "", "");
+
         yield return new WaitForSeconds(3.0f);
-        Box4.text = "-" + 8;
-        Box1.text = " ";
-        Box2.text = " ";
-        Box3.text = " ";
-        
+
+        update_boxes("", "+3", "", "");
+
         yield return new WaitForSeconds(3.0f);
-        Box3.text = "-" + 3;
-        Box1.text = " ";
-        Box2.text = " ";
-        Box4.text = " ";
-        
+
+        update_boxes("", "+7", "", "");
+
         yield return new WaitForSeconds(3.0f);
-        //wMcanvas.SetActive(false);
-        clearBoxTest();
+
+        update_boxes("", "", "-1", "");
+
+        yield return new WaitForSeconds(3.0f);
+
+        update_boxes("", "", "", "");
+
+        yield return new WaitForSeconds(3.0f);
+
         accept_data();
-        count ++;
+        count++;
     }
     IEnumerator WMCoroutineHard1()
     {
-        Box1.text = "1";
-        Box2.text = "2";
-        Box3.text = "3";
-        Box4.text = "4";
+        update_boxes("3", "3", "8", "2");
 
         yield return new WaitForSeconds(6.5f);
-        Box1.text = "+" + 14;
-        Box2.text = " ";
-        Box3.text = " ";
-        Box4.text = " ";
-        
-        yield return new WaitForSeconds(3.0f);
-        Box4.text = "+" + 11;
-        Box1.text = " ";
-        Box2.text = " ";
-        Box3.text = " ";
+
+        update_boxes("+86", "", "", "");
 
         yield return new WaitForSeconds(3.0f);
-        Box3.text = "-" + 15;
-        Box1.text = " ";
-        Box2.text = " ";
-        Box4.text = " ";
-        
-        yield return new WaitForSeconds(3.0f);  
-        Box2.text = "+" + 16;
-        Box1.text = " ";
-        Box3.text = " ";
-        Box4.text = " ";
-        
+
+        update_boxes("+10", "", "", "");
+
         yield return new WaitForSeconds(3.0f);
-        Box4.text = "-" + 10;
-        Box1.text = " ";
-        Box2.text = " ";
-        Box3.text = " ";
-        
+
+        update_boxes("", "", "", "+12");
+
         yield return new WaitForSeconds(3.0f);
-        Box3.text = "-" + 19;
-        Box1.text = " ";
-        Box2.text = " ";
-        Box4.text = " ";
-        
+
+        update_boxes("", "", "+11", "");
+
         yield return new WaitForSeconds(3.0f);
-        //wMcanvas.SetActive(false);
-        clearBoxTest();
+
+        update_boxes("", "+61", "", "");
+
+        yield return new WaitForSeconds(3.0f);
+
+        update_boxes("", "", "", "");
+
+        yield return new WaitForSeconds(3.0f);
+
         accept_data();
-        count ++;
+        count++;
     }
     IEnumerator WMCoroutineHard2()
     {
-        Box1.text = "1";
-        Box2.text = "2";
-        Box3.text = "3";
-        Box4.text = "4";
+        update_boxes("6", "3", "6", "4");
 
         yield return new WaitForSeconds(6.5f);
-        Box1.text = "+" + 18;
-        Box2.text = " ";
-        Box3.text = " ";
-        Box4.text = " ";
-        
-        yield return new WaitForSeconds(3.0f);
-        Box4.text = "+" + 12;
-        Box1.text = " ";
-        Box2.text = " ";
-        Box3.text = " ";
+
+        update_boxes("+42", "", "", "");
 
         yield return new WaitForSeconds(3.0f);
-        Box3.text = "-" + 13;
-        Box1.text = " ";
-        Box2.text = " ";
-        Box4.text = " ";
-        
-        yield return new WaitForSeconds(3.0f);  
-        Box2.text = "+" + 14;
-        Box1.text = " ";
-        Box3.text = " ";
-        Box4.text = " ";
-        
+
+        update_boxes("", "+15", "", "");
+
         yield return new WaitForSeconds(3.0f);
-        Box4.text = "-" + 10;
-        Box1.text = " ";
-        Box2.text = " ";
-        Box3.text = " ";
-        
+
+        update_boxes("", "", "+11", "");
+
         yield return new WaitForSeconds(3.0f);
-        Box3.text = "-" + 16;
-        Box1.text = " ";
-        Box2.text = " ";
-        Box4.text = " ";
-        
+
+        update_boxes("+10", "", "", "");
+
         yield return new WaitForSeconds(3.0f);
-        //wMcanvas.SetActive(false);
-        clearBoxTest();
+
+        update_boxes("", "", "", "+13");
+
+        yield return new WaitForSeconds(3.0f);
+
+        update_boxes("", "", "", "");
+
+        yield return new WaitForSeconds(3.0f);
+
         accept_data();
-        count ++;
+        count++;
     }
     IEnumerator WMCoroutineHard3()
     {
-        Box1.text = "1";
-        Box2.text = "2";
-        Box3.text = "3";
-        Box4.text = "4";
+        update_boxes("1", "2", "3", "1");
 
         yield return new WaitForSeconds(6.5f);
-        Box1.text = "+" + 18;
-        Box2.text = " ";
-        Box3.text = " ";
-        Box4.text = " ";
-        
-        yield return new WaitForSeconds(3.0f);
-        Box4.text = "+" + 10;
-        Box1.text = " ";
-        Box2.text = " ";
-        Box3.text = " ";
+
+        update_boxes("", "", "", "+13");
 
         yield return new WaitForSeconds(3.0f);
-        Box3.text = "-" + 17;
-        Box1.text = " ";
-        Box2.text = " ";
-        Box4.text = " ";
-        
-        yield return new WaitForSeconds(3.0f);  
-        Box2.text = "+" + 11;
-        Box1.text = " ";
-        Box3.text = " ";
-        Box4.text = " ";
-        
+
+        update_boxes("", "+21", "", "");
+
         yield return new WaitForSeconds(3.0f);
-        Box4.text = "-" + 15;
-        Box1.text = " ";
-        Box2.text = " ";
-        Box3.text = " ";
-        
+
+        update_boxes("", "", "+42", "");
+
         yield return new WaitForSeconds(3.0f);
-        Box3.text = "-" + 12;
-        Box1.text = " ";
-        Box2.text = " ";
-        Box4.text = " ";
-        
+
+        update_boxes("+41", "", "", "");
+
         yield return new WaitForSeconds(3.0f);
-        //wMcanvas.SetActive(false);
-        clearBoxTest();
+
+        update_boxes("", "", "", "+64");
+
+        yield return new WaitForSeconds(3.0f);
+
+        update_boxes("", "", "", "");
+
+        yield return new WaitForSeconds(3.0f);
+
         accept_data();
-        count ++;
+        count++;
     }
+
     //clears text areas after button click
     void ClearInputText() 
     {
@@ -381,13 +295,7 @@ public class WMGUI : MonoBehaviour
         Answer2.interactable = true;
         Answer3.interactable = true;
         Answer4.interactable = true;
-}
-
-    void clearBoxTest()
-    {
-        Box1.text = "";
-        Box2.text = "";
-        Box3.text = "";
-        Box4.text = "";
     }
+
+
 }

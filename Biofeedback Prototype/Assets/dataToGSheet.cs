@@ -44,12 +44,12 @@ public class dataToGSheet : MonoBehaviour
             dataToSend[i] = "data to send " + i;
         }
 
-        med1ans = new string[4] { "13", "11", "-1", "-1" };
-        med2ans = new string[4] { "13", "11", "-1", "-1" };
-        med3ans = new string[4] { "13", "11", "-1", "-1" };
-        hard1ans = new string[4] { "13", "11", "-1", "-1" };
-        hard2ans = new string[4] { "13", "11", "-1", "-1" };
-        hard3ans = new string[4] { "13", "11", "-1", "-1" };
+        med1ans = new string[4] { "15", "5", "9", "8" };
+        med2ans = new string[4] { "8", "5", "8", "17" };
+        med3ans = new string[4] { "1", "11", "1", "6" };
+        hard1ans = new string[4] { "99", "64", "19", "14" };
+        hard2ans = new string[4] { "58", "18", "17", "17" };
+        hard3ans = new string[4] { "42", "23", "45", "78" };
         answers = new string[][] { med1ans, med2ans, med3ans, hard1ans, hard2ans, hard3ans };
     }
     //answer arrays  
