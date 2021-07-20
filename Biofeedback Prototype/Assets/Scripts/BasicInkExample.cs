@@ -41,18 +41,6 @@ public class BasicInkExample : MonoBehaviour {
 		// Remove all the UI on screen
 		RemoveChildren();
 
-        /*
-		// Read all the content until we can't continue any more
-		while (story.canContinue) {
-			// Continue gets the next line of the story
-			string text = story.Continue();
-			// This removes any white space from the text.
-			text = text.Trim();
-			// Display the text on screen!
-			CreateContentView(text);
-		}
-        */
-
         //display text one line at a time. this is necessary so it will properly fit in the
         //text box frame.
         if (story.canContinue)
@@ -89,7 +77,8 @@ public class BasicInkExample : MonoBehaviour {
 
 	// When we click the choice button, tell the story to choose that choice!
 	void OnClickChoiceButton (Choice choice) {
-		story.ChooseChoiceIndex(choice.index);
+        dummy.play_button_click_sound();
+        story.ChooseChoiceIndex(choice.index);
 		RefreshView();
 	}
 

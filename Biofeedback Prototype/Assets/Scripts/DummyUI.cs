@@ -20,7 +20,9 @@ public class DummyUI : MonoBehaviour
     //(a stop in ink could be something like a choice selection)
 
     //connections
-    [SerializeField] private BasicInkExample bassy;
+    [SerializeField] private BasicInkExample bassy; //the story manager
+    [SerializeField] private SoundManager SM; //sound manager
+    [SerializeField] private FadeManager fader; //sound manager
 
     //background image slot for sprite.
     [SerializeField] private Image bg;
@@ -62,8 +64,26 @@ public class DummyUI : MonoBehaviour
         toggle_continueImage(true);
         bassy.enable_input();
     }
+    public void play_button_click_sound()
+    {
+        SM.play_buttonSound();
+    }
 
     //EXTERNAL, INK-LINKED FUNCTIONS
+    void stop_music()
+    {
+        //stops a song from SM.
+        SM.stop_playing();
+    }
+    void play_music(int whichTrack)
+    {
+        SM.play_loop(whichTrack);
+    }
+    void play_sound(int whichTrack)
+    {
+        //plays a song/sound from SM.
+        SM.play_once(whichTrack);        
+    }
     void set_name(string nom)
     {
         //sets nameText.text to nom.
@@ -71,10 +91,7 @@ public class DummyUI : MonoBehaviour
     }
     void set_background(int bgIndex)
     {
-        //This approach externalizes complexity from the ink story.
-        //index legend:
-        // 0: Office Background 1
-        // 1: Office Background 2
+        fader.fade_to_black();
         bg.sprite = bgList[bgIndex];
     }
     void set_portrait0(int spriteIndex, int posIndex)
@@ -92,25 +109,40 @@ public class DummyUI : MonoBehaviour
     //this is because it needs a ref to the story.
     public void link_external_functions(Ink.Runtime.Story story)
     {
+        //SOUND
+        story.BindExternalFunction("stop_music", () =>
+        {
+            this.stop_music();
+        });
+        story.BindExternalFunction("play_music", (int whichTrack) =>
+        {
+            this.play_music(whichTrack);
+        });
+        story.BindExternalFunction("play_sound", (int whichTrack) =>
+        {
+            this.play_sound(whichTrack);
+        });
+        
+        //VISUALS
+        //to do: 
+        // - add fade in set_background(). add fadeManager.
         story.BindExternalFunction("set_name", (string name) =>
         {
             this.set_name(name);
         });
-
         story.BindExternalFunction("set_background", (int bgIndex) =>
         {
             this.set_background(bgIndex);
         });
-
         story.BindExternalFunction("set_portrait0", (int spriteIndex, int posIndex) =>
         {
             this.set_portrait0(spriteIndex, posIndex);
         });
-
         story.BindExternalFunction("set_portrait1", (int spriteIndex, int posIndex) =>
         {
             this.set_portrait1(spriteIndex, posIndex);
         });
+
     }
 
 }
