@@ -1,0 +1,6 @@
+[2021-07-20 20:59:15.220] [board_logger] [info] incoming json: {"file":"","ip_address":"","ip_port":0,"ip_protocol":0,"mac_address":"","other_info":"","serial_number":"","serial_port":"","timeout":0}
+[2021-07-20 20:59:15.220] [board_logger] [trace] Board object created -1
+[2021-07-20 20:59:15.220] [board_logger] [trace] prepare session
+[2021-07-20 20:59:15.232] [board_logger] [trace] File Streamer, file: brainflow_data.csv, mods: w
+[2021-07-20 20:59:17.450] [board_logger] [trace] release session
+[2021-07-20 20:59:17.450] [board_logger] [trace] stop stream

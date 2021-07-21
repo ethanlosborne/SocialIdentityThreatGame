@@ -44,7 +44,6 @@ public class HeartRateManager : MonoBehaviour
         hrText.text = integer_heart_rate.ToString();
         if (integer_heart_rate > 60 && integer_heart_rate < 80)
         {
-            UnityEngine.Debug.Log("Low");
             low_Heart.SetActive(true);
             low_Medium_Heart.SetActive(false);
             moderate_Heart.SetActive(false);
@@ -52,7 +51,6 @@ public class HeartRateManager : MonoBehaviour
             maximum_Heart.SetActive(false);
         } else if (integer_heart_rate >= 80 && integer_heart_rate < 100)
         {
-            UnityEngine.Debug.Log("low Medium");
             low_Heart.SetActive(false);
             low_Medium_Heart.SetActive(true);
             moderate_Heart.SetActive(false);
@@ -60,7 +58,6 @@ public class HeartRateManager : MonoBehaviour
             maximum_Heart.SetActive(false);
         } else if (integer_heart_rate >= 100 && integer_heart_rate < 120)
         {
-            UnityEngine.Debug.Log("moderate");
             low_Heart.SetActive(false);
             low_Medium_Heart.SetActive(false);
             moderate_Heart.SetActive(true);
@@ -68,7 +65,6 @@ public class HeartRateManager : MonoBehaviour
             maximum_Heart.SetActive(false);
         } else if (integer_heart_rate >= 120 && integer_heart_rate < 140)
         {
-            UnityEngine.Debug.Log("high");
             low_Heart.SetActive(false);
             low_Medium_Heart.SetActive(false);
             moderate_Heart.SetActive(false);
@@ -76,7 +72,6 @@ public class HeartRateManager : MonoBehaviour
             maximum_Heart.SetActive(false);
         } else if (integer_heart_rate >= 140)
         {
-            UnityEngine.Debug.Log("max");
             low_Heart.SetActive(false);
             low_Medium_Heart.SetActive(false);
             moderate_Heart.SetActive(false);
