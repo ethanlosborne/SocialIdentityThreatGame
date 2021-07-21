@@ -325,6 +325,5 @@ Assets\Scripts\HeartRateManager.cs
 Assets\Scripts\QuitGameOnKeypress.cs
 Assets\Scripts\SimpleGetData.cs
 Assets\Scripts\SoundManager.cs
-Assets\Scripts\UDPReceive.cs
 Assets\WMGUI.cs
 Assets\dataToGSheet.cs
