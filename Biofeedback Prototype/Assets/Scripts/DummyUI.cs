@@ -33,8 +33,7 @@ public class DummyUI : MonoBehaviour
     [SerializeField] private Image continueImage;
 
     //portrait image slots for character sprites. feel free to move them around.
-    [SerializeField] private Image portrait0;
-    [SerializeField] private Image portrait1;
+    [SerializeField] private Image[] portraitSlots; //3 slots. left, middle, center. (0, 1, 2)
 
     [SerializeField] private Sprite[] bgList;
     [SerializeField] private Sprite[] spriteList;
@@ -56,9 +55,18 @@ public class DummyUI : MonoBehaviour
     IEnumerator typeSentence(string sentence)
     {
         textBox.text = "";
+        string buildMe = "";
         foreach (char letter in sentence.ToCharArray())
         {
-            textBox.text += letter;
+            buildMe += letter;
+            if (nameBox.text == "")
+            {
+                textBox.text = buildMe;
+            }
+            else
+            {
+                textBox.text = "\"" + buildMe + "\"";
+            }
             yield return new WaitForSeconds(0.02f);
         }
         toggle_continueImage(true);
@@ -68,6 +76,7 @@ public class DummyUI : MonoBehaviour
     {
         SM.play_buttonSound();
     }
+
 
     //EXTERNAL, INK-LINKED FUNCTIONS
     void stop_music()
@@ -87,22 +96,37 @@ public class DummyUI : MonoBehaviour
     void set_name(string nom)
     {
         //sets nameText.text to nom.
-        nameBox.text = nom;
+
+        if (nom == "")
+        {
+            nameBox.transform.parent.gameObject.SetActive(false);
+            nameBox.text = "";           
+        }
+        else
+        {
+            nameBox.text = nom;
+            nameBox.transform.parent.gameObject.SetActive(true);
+        }
     }
     void set_background(int bgIndex)
     {
         fader.fade_to_black();
         bg.sprite = bgList[bgIndex];
     }
-    void set_portrait0(int spriteIndex, int posIndex)
+    void set_portrait_slot(int whichSlot)
     {
-        //spriteIndex corresponds to the index of a sprite in spriteList.
-        //posIndex corresponds to a position of the screen where the image will be placed. set to -1 to avoid altering the position.
-    }
-    void set_portrait1(int spriteIndex, int posIndex)
-    {
-        //spriteIndex corresponds to the index of a sprite in spriteList.
-        //posIndex corresponds to a position of the screen where the image will be placed. set to -1 to avoid altering the position.
+        //whichSlot legend:
+        //0: left
+        //1: center
+        //2: right
+
+        //not implementing yet because I still don't know how much variations the char images will have.
+        //if they have different expressions, then we need to use 99-style indexing (and include another function arg)
+        //etc.
+        /*
+        portraitSlots[whichSlot].GetComponent<Image>().sprite = pLibrary.retrieve_fullp(index);
+        portraitSlots[whichSlot].SetActive(true);
+        */
     }
 
     //this function is called in BasicInkExample.
@@ -124,8 +148,6 @@ public class DummyUI : MonoBehaviour
         });
         
         //VISUALS
-        //to do: 
-        // - add fade in set_background(). add fadeManager.
         story.BindExternalFunction("set_name", (string name) =>
         {
             this.set_name(name);
@@ -134,15 +156,10 @@ public class DummyUI : MonoBehaviour
         {
             this.set_background(bgIndex);
         });
-        story.BindExternalFunction("set_portrait0", (int spriteIndex, int posIndex) =>
+        story.BindExternalFunction("set_portrait_slot", (int whichSlot) =>
         {
-            this.set_portrait0(spriteIndex, posIndex);
+            this.set_portrait_slot(whichSlot);
         });
-        story.BindExternalFunction("set_portrait1", (int spriteIndex, int posIndex) =>
-        {
-            this.set_portrait1(spriteIndex, posIndex);
-        });
-
     }
 
 }
