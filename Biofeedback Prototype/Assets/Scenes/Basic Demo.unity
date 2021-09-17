@@ -484,7 +484,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.4811321, g: 0.46070668, b: 0.46070668, a: 0.49019608}
+  m_Color: {r: 0.4811321, g: 0.46070668, b: 0.46070668, a: 0.8235294}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -960,11 +960,18 @@ MonoBehaviour:
   textBox: {fileID: 97042065}
   nameBox: {fileID: 85956466}
   continueImage: {fileID: 1941409632}
-  portrait0: {fileID: 0}
-  portrait1: {fileID: 0}
+  portraitSlots: []
   bgList:
-  - {fileID: 21300000, guid: e43be5cb1512ff245a24c302ab21fa3c, type: 3}
-  - {fileID: 21300000, guid: 96c7ee2784b1893449abfd4b286f7d99, type: 3}
+  - {fileID: 0}
+  - {fileID: 21300000, guid: 3822b957dcb79704a8a1262af9b61c85, type: 3}
+  - {fileID: 0}
+  - {fileID: 21300000, guid: 924dbb6f8107bd64c9cafe7c1c0be60b, type: 3}
+  - {fileID: 21300000, guid: 00a56d7413eddac4bbeb582ad067c7dc, type: 3}
+  - {fileID: 21300000, guid: c0dfbae93fdf7be47bac6fc91846affd, type: 3}
+  - {fileID: 21300000, guid: b18f88d1a232fc9499a21e5362c2eb31, type: 3}
+  - {fileID: 21300000, guid: 3a73f3d63ee53c842a8e3dffa5a93ce6, type: 3}
+  - {fileID: 0}
+  - {fileID: 21300000, guid: 114eef3987957b343a552037519229c7, type: 3}
   spriteList:
   - {fileID: 21300000, guid: f158850ed256582448cc1a9e96b77ed3, type: 3}
   - {fileID: 21300000, guid: d2a8300b312d8c944aed5369402d345a, type: 3}

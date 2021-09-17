@@ -8,7 +8,7 @@ EXTERNAL stop_music() //stops music.
 //End external functions.
 
 //You can call one like so:
-//~ set_background(0)
+//~set_background(0)
 
 -> invitation
 
@@ -21,9 +21,8 @@ aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 result: 658 characters */
 
 ~set_name("")
+~set_background(1)
 Part I: The Invitation
-
-//~ play_music(0) //dummy.
 
 Hello X! We are delighted to announce after reviewing hundreds of applications, you’ve been selected to interview for a summer internship with V Inc. In the next day or so, one of our HR representatives will be calling you to schedule an interview date.
 In the meantime, we would like to encourage you to learn a little more about our company by watching the informational video below. This video provides an overview about our summer internship program, and the company as a whole. Thank you and we look forward to meeting you very soon!
@@ -90,15 +89,22 @@ In the meantime, we would like to encourage you to learn a little more about our
 
 // Mason section START
 === enter_building_reception ===
-    ~ set_name("")
+
+    //~set_background(2) #TODO. I believe we're still missing this bg image.
+    ~set_name("")
+
     On this day X has been invited to the company’s campus for an interview. Her appointment is set for 2:30pm. She walks into the building and checks in at the security desk; There are two security guards (men) at the front door—one Black, another Hispanic. X checks in at the security desk. She presents her interview card, and states that she is interviewing with Division D.
     Black Guard looks at her interview card and ID, checks her name on an ipad (or computer) and says: “10th Floor, Main reception area- right across the elevators.”
+
+    ~set_background(3)
+
     X goes through security and is allowed into the foyer. It’s exquisite —well decorated, people in suits (men, mostly) walking about hurriedly, minding their own business. There seems to be a sense of urgency in this work environment.
     * * * [Head to the elevators] \[I walked to the elevators.\]
     X heads to the elevator. A cleaning lady (White woman) walks by with a cleaning cart and says ‘Hello’ to X as she continues on her way.
     * * * * [Press the 10th floor button] \[I pressed the 10th floor button.\]
     X takes the elevator to the 10th floor. Walks straight to the reception area and meets receptionist; a Black woman in her mid-thirties, with a short Afro.
 
+    ~set_background(4)
     ~set_name("Receptionist")
     //~show receptionist
     Receptionist: Good afternoon and welcome to Division D. How may I help you?
@@ -120,7 +126,6 @@ In the meantime, we would like to encourage you to learn a little more about our
 
     ~set_name("Receptionist")
     Types into a computer. Makes small talk.
-
     Wow! Engineering huh? You must be a chop - you know? Genius! Over 1000 applications each year for those positions and only about 10 make the final cut (she smiles at X).
 
     ~set_name("")
@@ -136,6 +141,9 @@ In the meantime, we would like to encourage you to learn a little more about our
 
 // Marj section START
 === manipulating_social_interactions_waiting_room ===
+
+~set_background(6)
+
 X gets to Rm 1016. It is quite packed. She looks around. There are about 15 people waiting. Some are busy looking at their phones, others are chatting with each other…and some are reading books or just sitting and staring into space.
 There’s only one other woman in the room besides herself. This woman is Asian. Of the 14 men, 8 are white, and 6 are Asian.
 
@@ -179,6 +187,7 @@ I hear they hire mostly- well, last year at least—and the year before that- mo
 ~set_name("Li")
 That’s me! Gotta go! Good luck.
 
+~set_background(7)
 ~set_name("")
 Receptionist enters...and goes to X.
 
@@ -187,14 +196,19 @@ X? I'm sorry I forgot to give you these ... can you complete these forms as soon
 
 ~set_name("")
 X receives a link to a survey she should complete [survey is 2 minutes or less--]
-
 After distraction task/ bougus survey (or maybe identity threat inducing one) —intercom buzzes and X’s number is called. D-035.
 
 - * [Head towards interview room] \[I headed towards the interview room.\]
     -> manipulating_social_interactions_interview_room
 
 === manipulating_social_interactions_interview_room ===
+
+~set_background(9)
+
 X walks across the hall to Rm 1018. On the walls are photos of executives… All White men. She opens the door and sees a panel of 4 interviewers sitting at a long table. 3 lean towards each other, whispering to each other. One is writing something in a folder.
+
+//~set_background(10) #TODO. when we have room 1018/background 10 made.
+
 As she walks into the room, Interviewer \#5 comes in from a side door with a mug in hand. Looks at X and says
 
 ~set_name("Interviewer \#5")

@@ -36,6 +36,19 @@ public class DummyUI : MonoBehaviour
     [SerializeField] private Image[] portraitSlots; //3 slots. left, middle, center. (0, 1, 2)
 
     [SerializeField] private Sprite[] bgList;
+    //all the bgs in the entire game. Legend, by index:
+    //0: none
+    //1: scene 1 from art drive
+    //2: none
+    //3: scene 3 from art drive
+    //4: scene 4 from art drive
+    //5: scene 5 from art drive
+    //6: scene 6 from art drive
+    //7: scene 7 from art drive
+    //8: none
+    //9: scene 9 from art drive
+
+
     [SerializeField] private Sprite[] spriteList;
 
     //functions to be called from within ink script. (note: it must be properly linked in there.)
