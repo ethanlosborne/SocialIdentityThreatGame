@@ -43,7 +43,8 @@ public class SimpleGetData : MonoBehaviour
         int number_of_data_points = sampling_rate * 4;
         double[,] data = board_shim.get_current_board_data(number_of_data_points);
         // check https://brainflow.readthedocs.io/en/stable/index.html for api ref and more code samples
-        Debug.Log("Num elements: " + data.GetLength(1));
+                
+        //Debug.Log("Num elements: " + data.GetLength(1));
     }
 
     // you need to call release_session and ensure that all resources correctly released

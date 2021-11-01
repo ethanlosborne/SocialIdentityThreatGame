@@ -54,6 +54,11 @@ public class DummyUI : MonoBehaviour
     //functions to be called from within ink script. (note: it must be properly linked in there.)
     //i've linked this two functions there at the start of the script as a template. 
       
+    public void click_continueArrow()
+    {
+        toggle_continueImage(false);
+        bassy.RefreshView();
+    }
     void toggle_continueImage(bool state)
     {
         continueImage.gameObject.SetActive(state);
@@ -89,7 +94,6 @@ public class DummyUI : MonoBehaviour
     {
         SM.play_buttonSound();
     }
-
 
     //EXTERNAL, INK-LINKED FUNCTIONS
     void stop_music()

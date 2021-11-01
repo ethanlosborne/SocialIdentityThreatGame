@@ -47,7 +47,7 @@ In the meantime, we would like to encourage you to learn a little more about our
 
         * * * Paola Ortiz (Hispanic girl with accent, marketing intern)
             ~ set_name("Paola Ortiz")
-            My name is Paola Ortiz and I'ma junior at the University of Denver and I study Marketing and Communications. When I was young, I just looooved the jingles to commercials; I used to memorize TV commercials and act them out. It always fascinated me how one could see the beauty in every day things, and make others see that same beauty by playing with words.
+            My name is Paola Ortiz and I'm a junior at the University of Denver and I study Marketing and Communications. When I was young, I just looooved the jingles to commercials; I used to memorize TV commercials and act them out. It always fascinated me how one could see the beauty in every day things, and make others see that same beauty by playing with words.
             The marketing team that I work with is amazing and I’ve learned more here in 2 months than I ever did as an entry level employee during my gap year at a different company.
             ~set_name("")
             * * * * [Return to selection screen]

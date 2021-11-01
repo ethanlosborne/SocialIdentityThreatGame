@@ -37,7 +37,7 @@ public class BasicInkExample : MonoBehaviour {
 	// This is the main function called every time the story changes. It does a few things:
 	// Destroys all the old content and choices.
 	// Continues over all the lines of text, then displays all the choices. If there are no choices, the story is finished!
-	void RefreshView() {
+	public void RefreshView() {
 		// Remove all the UI on screen
 		RemoveChildren();
 
@@ -57,6 +57,7 @@ public class BasicInkExample : MonoBehaviour {
                 button.onClick.AddListener(delegate {
                     OnClickChoiceButton(choice);
                 });
+                Debug.Log("adding choice button listener");
             }
         }
         // If we've read all the content and there's no choices, the story is finished!
@@ -68,7 +69,7 @@ public class BasicInkExample : MonoBehaviour {
             });
         }
     }
-        	
+	
     public void enable_input()
     {
         //called from DummyUI after the textbox has finished displaying.
@@ -77,6 +78,7 @@ public class BasicInkExample : MonoBehaviour {
 
 	// When we click the choice button, tell the story to choose that choice!
 	void OnClickChoiceButton (Choice choice) {
+        Debug.Log("OnClickChoiceButton() called");
         dummy.play_button_click_sound();
         story.ChooseChoiceIndex(choice.index);
 		RefreshView();
@@ -104,8 +106,8 @@ public class BasicInkExample : MonoBehaviour {
 		choiceText.text = text;
 
 		// Make the button expand to fit the text
-		HorizontalLayoutGroup layoutGroup = choice.GetComponent <HorizontalLayoutGroup> ();
-		layoutGroup.childForceExpandHeight = false;
+		//VerticalLayoutGroup layoutGroup = choice.GetComponent<VerticalLayoutGroup>();
+		//layoutGroup.childForceExpandHeight = false;
 
 		return choice;
 	}
