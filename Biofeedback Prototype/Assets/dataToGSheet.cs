@@ -8,14 +8,11 @@ using UnityEngine.Networking;
 public class dataToGSheet : MonoBehaviour
 {
     //actually fills out a google form, but that can have an associated google sheet with it.
-    //in that way, it does fill out a google sheet using a form as an intermediary.
-
-    //to consider:
-    // -some kind of security system for the form to make sure that it only accepts answers acquired in the game. 
+    //in that way, it fills out a google sheet using a form as an intermediary.
 
     private string[] workingData; //array of data to facilitate manipulation.
     private string[] dataToSend; //array of strings that will be used to collect data.
-    [SerializeField] private string[] entryCodes;
+    
 
     //data collection
     private double medAvg;
@@ -37,7 +34,23 @@ public class dataToGSheet : MonoBehaviour
     //copy the value there. format is: 'entry.somenumber'
 
     void Awake()
-    {       
+    {
+        //testing: let's see the values of surveys watched:
+        string surveyResultsTest = "|";
+        for (int i = 0; i < DummyUI.surveyData.Length; i++)
+        {
+            if (DummyUI.surveyData[i] == true)
+            {
+                surveyResultsTest += "w|";
+            }
+            else
+            {
+                surveyResultsTest += "nw|";
+            }
+        }
+        Debug.Log("survey results test = " + surveyResultsTest);
+
+
         dataToSend = new string[9];
         for (int i = 0; i < dataToSend.Length; i++)
         {
@@ -67,7 +80,7 @@ public class dataToGSheet : MonoBehaviour
         //StartCoroutine(Post(dataToSend, entryCodes)); return;
 
         //here, we'll recuperate the user's input from the text fields as well.
-        workingData = new string[9]; //or 9?
+        workingData = new string[9];
 
         //user answers
         //argument to retrieve_input() is the child's position in the hierarchy - if it changes there, it must change here as well.
@@ -87,7 +100,6 @@ public class dataToGSheet : MonoBehaviour
 
         //lastly, calc the accuracy.
         dataToSend[WMGUI.count - 1] = calc_accuracy(workingData).ToString();
-
         
 
         if (WMGUI.count == 6)
@@ -150,6 +162,8 @@ public class dataToGSheet : MonoBehaviour
 
     IEnumerator Post(string[] s, string[] e)
     {
+        //length of e = length of s + 1
+
         Debug.Log("sending post");
         WWWForm form = new WWWForm();
 
@@ -158,10 +172,26 @@ public class dataToGSheet : MonoBehaviour
             form.AddField(e[i], s[i]+ "%");
         }
 
+        //lastly, add the results of surveys watched
+        //(last field in form)
+        string surveyResultsStr = "|";
+        for (int i = 0; i < DummyUI.surveyData.Length; i++)
+        {
+            if (DummyUI.surveyData[i] == true)
+            {
+                surveyResultsStr += "w|";
+            }
+            else
+            {
+                surveyResultsStr += "nw|";
+            }
+        }
+        form.AddField(e[e.Length - 1], surveyResultsStr);
+
         UnityWebRequest www = UnityWebRequest.Post(base_url, form);
         yield return www.SendWebRequest();
 
-        //Debug.Log("Post() finished");
+        Debug.Log("Post() finished");
     }
 
 
@@ -179,7 +209,20 @@ public class dataToGSheet : MonoBehaviour
      * entry.1788298976
      * entry.1082262959
      * entry.2090790495
+     * entry.444355738
      */
-
+    private string[] entryCodes = new string[10]
+    {
+        "entry.2073761668",
+        "entry.1880679911",
+        "entry.1298641594",
+        "entry.2108320515",
+        "entry.1757202364",
+        "entry.1185371560",
+        "entry.1788298976",
+        "entry.1082262959",
+        "entry.2090790495",
+        "entry.444355738"
+    };
 
 }

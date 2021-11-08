@@ -2,6 +2,7 @@
 using UnityEngine.UI;
 using System;
 using Ink.Runtime;
+using UnityEngine.SceneManagement;
 
 // This is a super bare bones example of how to play and display a ink story in Unity.
 public class BasicInkExample : MonoBehaviour {
@@ -63,10 +64,16 @@ public class BasicInkExample : MonoBehaviour {
         // If we've read all the content and there's no choices, the story is finished!
         else
         {
+            //load the memory test scene.
+            SceneManager.LoadScene("WM Scene");
+
+
+            /*
             Button choice = CreateChoiceView("End of story.\nRestart?");
             choice.onClick.AddListener(delegate {
                 StartStory();
             });
+            */
         }
     }
 	

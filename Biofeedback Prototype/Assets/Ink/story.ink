@@ -5,6 +5,7 @@ EXTERNAL set_portrait_slot(whichSlot) //waiting for more info about portraits fi
 EXTERNAL play_music(whichTrack) //int. plays a looping track from soundManager's music array.
 EXTERNAL play_sound(whichTrack) //int. plays a sound track once from soundManager's sound array.
 EXTERNAL stop_music() //stops music.
+EXTERNAL record_surveys_watched(which)
 //End external functions.
 
 //You can call one like so:
@@ -37,46 +38,45 @@ In the meantime, we would like to encourage you to learn a little more about our
     The summer internship program is one of, if not the most critical pipeline Axis Technologies uses to scout and train and recruit exceptional talent that we are confident will propel our company to the future. We typically graduate interns identified as exceptional into permanent positions within the company.
     ~set_name("")
     * * (testimonials)[Watch testimonials from previous interns] \[I'm now watching testimonials from interns.\]
-
         * * * Jake Maxwell (White guy \#1, block chain data engineering intern)
             ~ set_name("Jake Maxwell")
+            ~ record_surveys_watched(0)
               My name is Jake Maxwell, I’m a graduate intern here at V Inc. Just the process of coding is actually fun. It’s exciting to work here because unlike a lot of other tech companies, V Inc is on the cutting edge of developing block chain technologies, which is revolutionizing the way smart contracts are executed. Block chain is the future and V-Inc is literally the rocket that’s taking us there.
               ~set_name("")
               * * * * [Return to selection screen]
               -> testimonials
-
         * * * Paola Ortiz (Hispanic girl with accent, marketing intern)
             ~ set_name("Paola Ortiz")
+            ~ record_surveys_watched(1)
             My name is Paola Ortiz and I'm a junior at the University of Denver and I study Marketing and Communications. When I was young, I just looooved the jingles to commercials; I used to memorize TV commercials and act them out. It always fascinated me how one could see the beauty in every day things, and make others see that same beauty by playing with words.
             The marketing team that I work with is amazing and I’ve learned more here in 2 months than I ever did as an entry level employee during my gap year at a different company.
             ~set_name("")
             * * * * [Return to selection screen]
               -> testimonials
-
         * * * Connor McDermott (White guy \#2, financial analyst intern)
             ~ set_name("Connor McDermott")
+            ~ record_surveys_watched(2)
             I’m Connor McDermott. I study Financial Mathematics at the Massachusetts Institute of Technology. I’m stationed within the finance division in the company and I must admit that I am having the time of my life learning about equity options and pricing V Inc stock for the financial markets.
             Mathematics is beautiful. She is everywhere and in everything- take the Fibonacci sequence in nature, for example! I think if mathematics was a person I’d marry her! Getting up everyday to do what I love, with a super talented team at V-Inc is beyond the dream. Life couldn’t get any better for me.
             ~set_name("")
             * * * * [Return to selection screen]
               -> testimonials
-
         * * * Zhang Wei (Asian girl, software engineering intern)
             ~ set_name("Zhang Wei")
+            ~ record_surveys_watched(3)
             My name is Zhang Wei. I’m from New Haven, Connecticut, where I’m studying physics and computer science at Yale University. I’m an intern in the software engineering department here, where I’ve had the opportunity to work with so many leaders in the field.
             The mentorship has been nothing short of amazing; My coding skills have gone through the roof in such a short time and I’m currently working on writing my own code for a software program to improve technical interviewing for software engineers in the tech industry. This is my greatest accomplishment yet and I’m excited to be part of the team.
             ~set_name("")
             * * * * [Return to selection screen]
               -> testimonials
-
         * * * Logan Stiles (White guy \#3)
             ~ set_name("Logan Stiles")
+            ~ record_surveys_watched(4)
             Hi. I’m Logan Stiles, from Virginia. I’m a graduated intern in the Cyber security division at V Inc, now working full time here as a security analyst, where I work on several cyber-security measures. I love to code- always have, always will. I’ve been coding since I was 9 years old.
             My first experience coding for an organization was at age 16 for The National Security Agency. I got to do some pretty cool stuff that set me on the path to coding for life but working here feels like home and I wouldn’t have it any other way.
             ~set_name("")
             * * * * [Return to selection screen]
               -> testimonials
-
         * * * [Stop watching testimonials] \[I stopped watching testimonials.\]
             -> interviewStart
 
@@ -84,7 +84,8 @@ In the meantime, we would like to encourage you to learn a little more about our
         \[To be continued...\]
 
 
-- -> manipulating_social_interactions_waiting_room
+//- -> manipulating_social_interactions_waiting_room
+- -> enter_building_reception
 // Marj section END
 
 // Mason section START

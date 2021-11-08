@@ -24,6 +24,15 @@ public class DummyUI : MonoBehaviour
     [SerializeField] private SoundManager SM; //sound manager
     [SerializeField] private FadeManager fader; //sound manager
 
+    //survey data collection
+    public static bool[] surveyData = new bool[5] { false, false, false, false, false };
+    //legend:
+    // -jake maxwell
+    // -paola ortiz
+    // -connor mcdermott
+    // -zhang wei
+    // -logan stiles
+
     //background image slot for sprite.
     [SerializeField] private Image bg;
     
@@ -146,6 +155,16 @@ public class DummyUI : MonoBehaviour
         */
     }
 
+    void record_surveys_watched(int which)
+    {
+        //used to keep track of what surveys were watched.
+        //goes and updates the value in a static array of bools 
+        //in dataToGSheet.
+
+        surveyData[which] = true;
+        Debug.Log("record surveys watched updated, yo!");
+    }
+
     //this function is called in BasicInkExample.
     //this is because it needs a ref to the story.
     public void link_external_functions(Ink.Runtime.Story story)
@@ -176,6 +195,12 @@ public class DummyUI : MonoBehaviour
         story.BindExternalFunction("set_portrait_slot", (int whichSlot) =>
         {
             this.set_portrait_slot(whichSlot);
+        });
+
+        //DATA COLLECTION
+        story.BindExternalFunction("record_surveys_watched", (int which) =>
+        {
+            this.record_surveys_watched(which);
         });
     }
 
