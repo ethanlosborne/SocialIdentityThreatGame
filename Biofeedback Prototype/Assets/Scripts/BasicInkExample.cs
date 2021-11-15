@@ -46,7 +46,16 @@ public class BasicInkExample : MonoBehaviour {
         //text box frame.
         if (story.canContinue)
         {
-            CreateContentView(story.Continue().Trim());
+            string toShow = story.Continue().Trim();
+            if (toShow.Length > 0)
+            {
+                CreateContentView(toShow);
+            }
+            else
+            {
+                RefreshView();
+            }
+            
         }        
         else if (story.currentChoices.Count > 0) // Display all the choices, if there are any!
         {           
@@ -55,10 +64,7 @@ public class BasicInkExample : MonoBehaviour {
                 Choice choice = story.currentChoices[i];
                 Button button = CreateChoiceView(choice.text.Trim());
                 // Tell the button what to do when we press it
-                button.onClick.AddListener(delegate {
-                    OnClickChoiceButton(choice);
-                });
-                Debug.Log("adding choice button listener");
+                button.onClick.AddListener(delegate { OnClickChoiceButton(choice); });
             }
         }
         // If we've read all the content and there's no choices, the story is finished!
@@ -66,7 +72,6 @@ public class BasicInkExample : MonoBehaviour {
         {
             //load the memory test scene.
             SceneManager.LoadScene("WM Scene");
-
 
             /*
             Button choice = CreateChoiceView("End of story.\nRestart?");
@@ -99,6 +104,7 @@ public class BasicInkExample : MonoBehaviour {
 		storyText.transform.SetParent (canvas.transform, false);
         */
         allowContinue = false;
+
         dummy.set_textBox(text);
 	}
 

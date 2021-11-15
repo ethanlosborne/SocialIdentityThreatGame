@@ -20,6 +20,7 @@ public class DummyUI : MonoBehaviour
     //(a stop in ink could be something like a choice selection)
 
     //connections
+    [SerializeField] private InkSettings settingsManager; //manages ink story settings.
     [SerializeField] private BasicInkExample bassy; //the story manager
     [SerializeField] private SoundManager SM; //sound manager
     [SerializeField] private FadeManager fader; //sound manager
@@ -94,9 +95,10 @@ public class DummyUI : MonoBehaviour
             {
                 textBox.text = "\"" + buildMe + "\"";
             }
-            yield return new WaitForSeconds(0.02f);
+            yield return new WaitForSeconds(settingsManager.get_waitTime());
         }
         toggle_continueImage(true);
+        Debug.Log("finished displaying line. buildMe = " + buildMe);
         bassy.enable_input();
     }
     public void play_button_click_sound()
