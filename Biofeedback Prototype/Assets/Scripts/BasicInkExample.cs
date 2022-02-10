@@ -16,7 +16,7 @@ public class BasicInkExample : MonoBehaviour {
     void Update()
     {
         //used to proceed with the story. fill textbox, type of thing.
-        if (allowContinue && Input.GetKeyDown(KeyCode.Space))
+        if (allowContinue && InkSettings.showingSettings == false && Input.GetKeyDown(KeyCode.Space))
         {
             RefreshView();
         }

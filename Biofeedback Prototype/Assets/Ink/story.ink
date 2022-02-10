@@ -1,7 +1,7 @@
 //Link external functions here.
 EXTERNAL set_name(name) //string. displays the speaker's name.
 EXTERNAL set_background(bgIndex) //int. changes the bg image and uses a fade.
-EXTERNAL set_portrait_slot(whichSlot) //waiting for more info about portraits first.
+EXTERNAL set_portrait_slot(whichSlot) //int. -1 to hide, 0-5 to show different characters.
 EXTERNAL play_music(whichTrack) //int. plays a looping track from soundManager's music array.
 EXTERNAL play_sound(whichTrack) //int. plays a sound track once from soundManager's sound array.
 EXTERNAL stop_music() //stops music.
@@ -30,7 +30,7 @@ In the meantime, we would like to encourage you to learn a little more about our
 
 //testing jump
 === invitation ===
-choices next
+//choices next
 
 *   [Watch the video] \[I started watching the video.\]
     //~ set_name("Emily Jacobs")
@@ -43,40 +43,56 @@ choices next
 
     ~set_name("")
     * * (testimonials)[Watch testimonials from previous interns] \[I'm now watching testimonials from interns.\]
+
         * * * Jake Maxwell (White guy \#1, block chain data engineering intern)
-            ~ set_name("Jake Maxwell")
-            ~ record_surveys_watched(0)
+            ~set_portrait_slot(4)
+            ~set_name("Jake Maxwell")
+            ~record_surveys_watched(0)
             My name is Jake Maxwell, I’m a graduate intern here at V Inc. Just the process of coding is actually fun. It’s exciting to work here because unlike a lot of other tech companies, V Inc is on the cutting edge of developing block chain technologies, which is revolutionizing the way smart contracts are executed. Block chain is the future and V-Inc is literally the rocket that’s taking us there.
+            ~set_portrait_slot(-1)
             ~set_name("")
             -> testimonials
+
         * * * Paola Ortiz (Hispanic girl with accent, marketing intern)
-            ~ set_name("Paola Ortiz")
-            ~ record_surveys_watched(1)
+            ~set_portrait_slot(3)
+            ~set_name("Paola Ortiz")
+            ~record_surveys_watched(1)
             My name is Paola Ortiz and I'm a junior at the University of Denver and I study Marketing and Communications. When I was young, I just looooved the jingles to commercials; I used to memorize TV commercials and act them out. It always fascinated me how one could see the beauty in every day things, and make others see that same beauty by playing with words.
             The marketing team that I work with is amazing and I’ve learned more here in 2 months than I ever did as an entry level employee during my gap year at a different company.
             ~set_name("")
+            ~set_portrait_slot(-1)
             -> testimonials
+
         * * * Connor McDermott (White guy \#2, financial analyst intern)
-            ~ set_name("Connor McDermott")
-            ~ record_surveys_watched(2)
+            ~set_portrait_slot(5)
+            ~set_name("Connor McDermott")
+            ~record_surveys_watched(2)
             I’m Connor McDermott. I study Financial Mathematics at the Massachusetts Institute of Technology. I’m stationed within the finance division in the company and I must admit that I am having the time of my life learning about equity options and pricing V Inc stock for the financial markets.
             Mathematics is beautiful. She is everywhere and in everything- take the Fibonacci sequence in nature, for example! I think if mathematics was a person I’d marry her! Getting up everyday to do what I love, with a super talented team at V-Inc is beyond the dream. Life couldn’t get any better for me.
             ~set_name("")
+            ~set_portrait_slot(-1)
             -> testimonials
+
         * * * Zhang Wei (Asian girl, software engineering intern)
-            ~ set_name("Zhang Wei")
-            ~ record_surveys_watched(3)
+            ~set_portrait_slot(0)
+            ~set_name("Zhang Wei")
+            ~record_surveys_watched(3)
             My name is Zhang Wei. I’m from New Haven, Connecticut, where I’m studying physics and computer science at Yale University. I’m an intern in the software engineering department here, where I’ve had the opportunity to work with so many leaders in the field.
             The mentorship has been nothing short of amazing; My coding skills have gone through the roof in such a short time and I’m currently working on writing my own code for a software program to improve technical interviewing for software engineers in the tech industry. This is my greatest accomplishment yet and I’m excited to be part of the team.
             ~set_name("")
+            ~set_portrait_slot(-1)
             -> testimonials
+
         * * * Logan Stiles (White guy \#3)
+            //~ set_portrait_slot(3) //Poor Logan Stiles has no portrait.
             ~ set_name("Logan Stiles")
             ~ record_surveys_watched(4)
             Hi. I’m Logan Stiles, from Virginia. I’m a graduated intern in the Cyber security division at V Inc, now working full time here as a security analyst, where I work on several cyber-security measures. I love to code- always have, always will. I’ve been coding since I was 9 years old.
             My first experience coding for an organization was at age 16 for The National Security Agency. I got to do some pretty cool stuff that set me on the path to coding for life but working here feels like home and I wouldn’t have it any other way.
             ~set_name("")
+            //~ set_portrait_slot(-1)
             -> testimonials
+
         * * * [Stop watching testimonials] \[I stopped watching testimonials.\]
             -> interviewStart
 
@@ -94,9 +110,14 @@ choices next
     //~set_background(2) #TODO. I believe we're still missing this bg image.
     ~set_name("")
 
-    On this day X has been invited to the company’s campus for an interview. Her appointment is set for 2:30pm. She walks into the building and checks in at the security desk; There are two security guards (men) at the front door—one Black, another Hispanic. X checks in at the security desk. She presents her interview card, and states that she is interviewing with Division D.
+    On this day X has been invited to the company’s campus for an interview. Her appointment is set for 2:30pm. She walks into the building and checks in at the security desk.
+
+    ~set_portrait_slot(1)
+
+    There are two security guards (men) at the front door—one Black, another Hispanic. X checks in at the security desk. She presents her interview card, and states that she is interviewing with Division D.
     Black Guard looks at her interview card and ID, checks her name on an ipad (or computer) and says: “10th Floor, Main reception area- right across the elevators.”
 
+    ~set_portrait_slot(-1)
     ~set_background(3)
 
     X goes through security and is allowed into the foyer. It’s exquisite —well decorated, people in suits (men, mostly) walking about hurriedly, minding their own business. There seems to be a sense of urgency in this work environment.
@@ -106,6 +127,7 @@ choices next
     X takes the elevator to the 10th floor. Walks straight to the reception area and meets receptionist; a Black woman in her mid-thirties, with a short Afro.
 
     ~set_background(4)
+    ~set_portrait_slot(2)
     ~set_name("Receptionist")
     //~show receptionist
     Receptionist: Good afternoon and welcome to Division D. How may I help you?
@@ -143,6 +165,7 @@ choices next
 // Marj section START
 === manipulating_social_interactions_waiting_room ===
 
+~set_portrait_slot(-1)
 ~set_background(6)
 
 X gets to Rm 1016. It is quite packed. She looks around. There are about 15 people waiting. Some are busy looking at their phones, others are chatting with each other…and some are reading books or just sitting and staring into space.

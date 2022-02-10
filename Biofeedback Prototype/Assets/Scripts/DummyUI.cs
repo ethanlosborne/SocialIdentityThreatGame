@@ -43,31 +43,39 @@ public class DummyUI : MonoBehaviour
     [SerializeField] private Image continueImage;
 
     //portrait image slots for character sprites. feel free to move them around.
-    [SerializeField] private Image[] portraitSlots; //3 slots. left, middle, center. (0, 1, 2)
+    [SerializeField] private Image portraitSlot; //a single slot.
 
     [SerializeField] private Sprite[] bgList;
     //all the bgs in the entire game. Legend, by index:
-    //0: none
-    //1: scene 1 from art drive
-    //2: none
-    //3: scene 3 from art drive
-    //4: scene 4 from art drive
-    //5: scene 5 from art drive
-    //6: scene 6 from art drive
-    //7: scene 7 from art drive
-    //8: none
-    //9: scene 9 from art drive
+    //0: email
+    //1: proom email
+    //2: scene1
+    //3: scene3
+    //4: scene4
+    //5: scene5
+    //6: room1016
+    //7: scene7
+    //8: scene9
+    //9: doorwayopen_rm18
+    //10: room1018
 
+    [SerializeField] private Sprite[] portraitList;
+    //all the portraits in the  entire game. Legend, by index:
+    //0: asian engineer
+    //1: black janitor
+    //2: black receptionist
+    //3: hispanic marketing
+    //4: white engineer
+    //5: white financial
 
-    [SerializeField] private Sprite[] spriteList;
-
-    //functions to be called from within ink script. (note: it must be properly linked in there.)
-    //i've linked this two functions there at the start of the script as a template. 
-      
     public void click_continueArrow()
     {
-        toggle_continueImage(false);
-        bassy.RefreshView();
+        if (InkSettings.showingSettings == false)
+        {
+            toggle_continueImage(false);
+            bassy.RefreshView();
+        }
+        
     }
     void toggle_continueImage(bool state)
     {
@@ -138,23 +146,24 @@ public class DummyUI : MonoBehaviour
     }
     void set_background(int bgIndex)
     {
-        fader.fade_to_black();
+        //fader.fade_to_black();
         bg.sprite = bgList[bgIndex];
     }
     void set_portrait_slot(int whichSlot)
     {
-        //whichSlot legend:
-        //0: left
-        //1: center
-        //2: right
+        //we have only one protrait slot. we show only one character at a time.
+        //accepts indices from -1 to 5.
 
-        //not implementing yet because I still don't know how much variations the char images will have.
-        //if they have different expressions, then we need to use 99-style indexing (and include another function arg)
-        //etc.
-        /*
-        portraitSlots[whichSlot].GetComponent<Image>().sprite = pLibrary.retrieve_fullp(index);
-        portraitSlots[whichSlot].SetActive(true);
-        */
+        if (whichSlot == -1)
+        {
+            portraitSlot.gameObject.SetActive(false);
+        }
+        else
+        {
+            portraitSlot.sprite = portraitList[whichSlot];
+            portraitSlot.gameObject.SetActive(true);
+        }
+
     }
 
     void record_surveys_watched(int which)
