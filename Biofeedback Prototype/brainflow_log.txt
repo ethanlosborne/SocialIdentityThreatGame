@@ -670,3 +670,220 @@
 [2022-02-09 16:16:06.810] [board_logger] [trace] File Streamer, file: brainflow_data.csv, mods: w
 [2022-02-09 16:16:16.944] [board_logger] [trace] release session
 [2022-02-09 16:16:16.945] [board_logger] [trace] stop stream
+[2022-02-18 13:32:37.609] [board_logger] [info] incoming json: {"file":"","ip_address":"","ip_port":0,"ip_protocol":0,"mac_address":"","other_info":"","serial_number":"","serial_port":"COM3","timeout":0}
+[2022-02-18 13:32:37.609] [board_logger] [debug] use dyn lib: C:\Users\coppe\Desktop\SocialIdentityThreatGame\Biofeedback Prototype\GanglionLib.dll
+[2022-02-18 13:32:37.609] [board_logger] [trace] Board object created 1
+[2022-02-18 13:32:37.636] [board_logger] [debug] Library is loaded
+[2022-02-18 13:32:37.636] [board_logger] [info] use 15 as a timeout for device discovery and for callbacks
+[2022-02-18 13:32:37.636] [board_logger] [debug] ganglionlib initialized
+[2022-02-18 13:32:37.636] [board_logger] [info] mac address is not specified, try to find ganglion without it
+[2022-02-18 13:32:39.041] [board_logger] [trace] File Streamer, file: brainflow_data.csv, mods: w
+[2022-02-18 13:32:39.041] [board_logger] [info] use command b to start streaming
+[2022-02-18 13:32:39.115] [board_logger] [debug] start streaming
+[2022-02-18 13:33:51.209] [board_logger] [info] incoming json: {"file":"","ip_address":"","ip_port":0,"ip_protocol":0,"mac_address":"","other_info":"","serial_number":"","serial_port":"COM3","timeout":0}
+[2022-02-18 13:33:51.209] [board_logger] [debug] use dyn lib: C:\Users\coppe\Desktop\SocialIdentityThreatGame\Biofeedback Prototype\GanglionLib.dll
+[2022-02-18 13:33:51.209] [board_logger] [trace] Board object created 1
+[2022-02-18 13:33:51.210] [board_logger] [debug] Library is loaded
+[2022-02-18 13:33:51.210] [board_logger] [info] use 15 as a timeout for device discovery and for callbacks
+[2022-02-18 13:33:51.210] [board_logger] [debug] ganglionlib initialized
+[2022-02-18 13:33:51.210] [board_logger] [info] mac address is not specified, try to find ganglion without it
+[2022-02-18 13:33:52.925] [board_logger] [trace] File Streamer, file: brainflow_data.csv, mods: w
+[2022-02-18 13:33:52.925] [board_logger] [info] use command b to start streaming
+[2022-02-18 13:33:52.994] [board_logger] [debug] start streaming
+[2022-02-18 13:58:46.049] [board_logger] [info] incoming json: {"file":"","ip_address":"","ip_port":0,"ip_protocol":0,"mac_address":"","other_info":"","serial_number":"","serial_port":"COM3","timeout":0}
+[2022-02-18 13:58:46.050] [board_logger] [debug] use dyn lib: C:\Users\coppe\Desktop\SocialIdentityThreatGame\Biofeedback Prototype\GanglionLib.dll
+[2022-02-18 13:58:46.050] [board_logger] [trace] Board object created 1
+[2022-02-18 13:58:46.051] [board_logger] [debug] Library is loaded
+[2022-02-18 13:58:46.051] [board_logger] [info] use 15 as a timeout for device discovery and for callbacks
+[2022-02-18 13:58:46.051] [board_logger] [debug] ganglionlib initialized
+[2022-02-18 13:58:46.051] [board_logger] [info] mac address is not specified, try to find ganglion without it
+[2022-02-18 13:58:47.697] [board_logger] [trace] File Streamer, file: brainflow_data.csv, mods: w
+[2022-02-18 13:58:47.702] [board_logger] [info] use command b to start streaming
+[2022-02-18 13:58:47.772] [board_logger] [debug] start streaming
+[2022-02-18 14:00:09.589] [board_logger] [info] incoming json: {"file":"","ip_address":"","ip_port":0,"ip_protocol":0,"mac_address":"","other_info":"","serial_number":"","serial_port":"COM3","timeout":0}
+[2022-02-18 14:00:09.589] [board_logger] [debug] use dyn lib: C:\Users\coppe\Desktop\SocialIdentityThreatGame\Biofeedback Prototype\GanglionLib.dll
+[2022-02-18 14:00:09.589] [board_logger] [trace] Board object created 1
+[2022-02-18 14:00:09.590] [board_logger] [debug] Library is loaded
+[2022-02-18 14:00:09.590] [board_logger] [info] use 15 as a timeout for device discovery and for callbacks
+[2022-02-18 14:00:09.590] [board_logger] [debug] ganglionlib initialized
+[2022-02-18 14:00:09.590] [board_logger] [info] mac address is not specified, try to find ganglion without it
+[2022-02-18 14:00:11.232] [board_logger] [trace] File Streamer, file: brainflow_data.csv, mods: w
+[2022-02-18 14:00:11.233] [board_logger] [info] use command b to start streaming
+[2022-02-18 14:00:11.303] [board_logger] [debug] start streaming
+[2022-02-18 14:00:48.375] [board_logger] [info] incoming json: {"file":"","ip_address":"","ip_port":0,"ip_protocol":0,"mac_address":"","other_info":"","serial_number":"","serial_port":"COM3","timeout":0}
+[2022-02-18 14:00:48.375] [board_logger] [debug] use dyn lib: C:\Users\coppe\Desktop\SocialIdentityThreatGame\Biofeedback Prototype\GanglionLib.dll
+[2022-02-18 14:00:48.375] [board_logger] [trace] Board object created 1
+[2022-02-18 14:00:48.376] [board_logger] [debug] Library is loaded
+[2022-02-18 14:00:48.376] [board_logger] [info] use 15 as a timeout for device discovery and for callbacks
+[2022-02-18 14:00:48.376] [board_logger] [debug] ganglionlib initialized
+[2022-02-18 14:00:48.376] [board_logger] [info] mac address is not specified, try to find ganglion without it
+[2022-02-18 14:01:04.655] [board_logger] [error] failed to Open Ganglion Device 15
+[2022-02-18 14:01:37.494] [board_logger] [info] incoming json: {"file":"","ip_address":"","ip_port":0,"ip_protocol":0,"mac_address":"","other_info":"","serial_number":"","serial_port":"COM3","timeout":0}
+[2022-02-18 14:01:37.494] [board_logger] [debug] use dyn lib: C:\Users\coppe\Desktop\SocialIdentityThreatGame\Biofeedback Prototype\GanglionLib.dll
+[2022-02-18 14:01:37.494] [board_logger] [trace] Board object created 1
+[2022-02-18 14:01:37.495] [board_logger] [debug] Library is loaded
+[2022-02-18 14:01:37.496] [board_logger] [info] use 15 as a timeout for device discovery and for callbacks
+[2022-02-18 14:01:37.496] [board_logger] [debug] ganglionlib initialized
+[2022-02-18 14:01:37.496] [board_logger] [info] mac address is not specified, try to find ganglion without it
+[2022-02-18 14:01:38.899] [board_logger] [trace] File Streamer, file: brainflow_data.csv, mods: w
+[2022-02-18 14:01:38.900] [board_logger] [info] use command b to start streaming
+[2022-02-18 14:01:38.970] [board_logger] [debug] start streaming
+[2022-02-18 14:02:13.314] [board_logger] [info] incoming json: {"file":"","ip_address":"","ip_port":0,"ip_protocol":0,"mac_address":"","other_info":"","serial_number":"","serial_port":"COM3","timeout":0}
+[2022-02-18 14:02:13.314] [board_logger] [debug] use dyn lib: C:\Users\coppe\Desktop\SocialIdentityThreatGame\Biofeedback Prototype\GanglionLib.dll
+[2022-02-18 14:02:13.314] [board_logger] [trace] Board object created 1
+[2022-02-18 14:02:13.315] [board_logger] [debug] Library is loaded
+[2022-02-18 14:02:13.315] [board_logger] [info] use 15 as a timeout for device discovery and for callbacks
+[2022-02-18 14:02:13.315] [board_logger] [debug] ganglionlib initialized
+[2022-02-18 14:02:13.315] [board_logger] [info] mac address is not specified, try to find ganglion without it
+[2022-02-18 14:02:14.700] [board_logger] [trace] File Streamer, file: brainflow_data.csv, mods: w
+[2022-02-18 14:02:14.700] [board_logger] [info] use command b to start streaming
+[2022-02-18 14:02:14.773] [board_logger] [debug] start streaming
+[2022-02-18 14:02:41.052] [board_logger] [info] incoming json: {"file":"","ip_address":"","ip_port":0,"ip_protocol":0,"mac_address":"","other_info":"","serial_number":"","serial_port":"COM3","timeout":0}
+[2022-02-18 14:02:41.052] [board_logger] [debug] use dyn lib: C:\Users\coppe\Desktop\SocialIdentityThreatGame\Biofeedback Prototype\GanglionLib.dll
+[2022-02-18 14:02:41.052] [board_logger] [trace] Board object created 1
+[2022-02-18 14:02:41.053] [board_logger] [debug] Library is loaded
+[2022-02-18 14:02:41.053] [board_logger] [info] use 15 as a timeout for device discovery and for callbacks
+[2022-02-18 14:02:41.053] [board_logger] [debug] ganglionlib initialized
+[2022-02-18 14:02:41.053] [board_logger] [info] mac address is not specified, try to find ganglion without it
+[2022-02-18 14:02:42.460] [board_logger] [trace] File Streamer, file: brainflow_data.csv, mods: w
+[2022-02-18 14:02:42.461] [board_logger] [info] use command b to start streaming
+[2022-02-18 14:02:42.529] [board_logger] [debug] start streaming
+[2022-02-18 14:03:13.124] [board_logger] [info] incoming json: {"file":"","ip_address":"","ip_port":0,"ip_protocol":0,"mac_address":"","other_info":"","serial_number":"","serial_port":"COM3","timeout":0}
+[2022-02-18 14:03:13.124] [board_logger] [debug] use dyn lib: C:\Users\coppe\Desktop\SocialIdentityThreatGame\Biofeedback Prototype\GanglionLib.dll
+[2022-02-18 14:03:13.124] [board_logger] [trace] Board object created 1
+[2022-02-18 14:03:13.126] [board_logger] [debug] Library is loaded
+[2022-02-18 14:03:13.126] [board_logger] [info] use 15 as a timeout for device discovery and for callbacks
+[2022-02-18 14:03:13.126] [board_logger] [debug] ganglionlib initialized
+[2022-02-18 14:03:13.126] [board_logger] [info] mac address is not specified, try to find ganglion without it
+[2022-02-18 14:03:14.534] [board_logger] [trace] File Streamer, file: brainflow_data.csv, mods: w
+[2022-02-18 14:03:14.535] [board_logger] [info] use command b to start streaming
+[2022-02-18 14:03:14.597] [board_logger] [debug] start streaming
+[2022-02-18 14:03:41.293] [board_logger] [info] incoming json: {"file":"","ip_address":"","ip_port":0,"ip_protocol":0,"mac_address":"","other_info":"","serial_number":"","serial_port":"COM3","timeout":0}
+[2022-02-18 14:03:41.293] [board_logger] [error] Board with id 1 and the same config already exists
+[2022-02-18 14:08:48.757] [board_logger] [info] incoming json: {"file":"","ip_address":"","ip_port":0,"ip_protocol":0,"mac_address":"","other_info":"","serial_number":"","serial_port":"COM3","timeout":0}
+[2022-02-18 14:08:48.757] [board_logger] [debug] use dyn lib: C:\Users\coppe\Desktop\SocialIdentityThreatGame\Biofeedback Prototype\GanglionLib.dll
+[2022-02-18 14:08:48.757] [board_logger] [trace] Board object created 1
+[2022-02-18 14:08:48.759] [board_logger] [debug] Library is loaded
+[2022-02-18 14:08:48.759] [board_logger] [info] use 15 as a timeout for device discovery and for callbacks
+[2022-02-18 14:08:48.759] [board_logger] [debug] ganglionlib initialized
+[2022-02-18 14:08:48.759] [board_logger] [info] mac address is not specified, try to find ganglion without it
+[2022-02-18 14:08:50.405] [board_logger] [trace] File Streamer, file: brainflow_data.csv, mods: w
+[2022-02-18 14:08:50.406] [board_logger] [info] use command b to start streaming
+[2022-02-18 14:08:50.479] [board_logger] [debug] start streaming
+[2022-02-18 14:09:09.646] [board_logger] [info] incoming json: {"file":"","ip_address":"","ip_port":0,"ip_protocol":0,"mac_address":"","other_info":"","serial_number":"","serial_port":"COM3","timeout":0}
+[2022-02-18 14:09:09.646] [board_logger] [debug] use dyn lib: C:\Users\coppe\Desktop\SocialIdentityThreatGame\Biofeedback Prototype\GanglionLib.dll
+[2022-02-18 14:09:09.646] [board_logger] [trace] Board object created 1
+[2022-02-18 14:09:09.647] [board_logger] [debug] Library is loaded
+[2022-02-18 14:09:09.647] [board_logger] [info] use 15 as a timeout for device discovery and for callbacks
+[2022-02-18 14:09:09.647] [board_logger] [debug] ganglionlib initialized
+[2022-02-18 14:09:09.647] [board_logger] [info] mac address is not specified, try to find ganglion without it
+[2022-02-18 14:09:11.071] [board_logger] [trace] File Streamer, file: brainflow_data.csv, mods: w
+[2022-02-18 14:09:11.072] [board_logger] [info] use command b to start streaming
+[2022-02-18 14:09:11.140] [board_logger] [debug] start streaming
+[2022-02-18 19:20:40.128] [board_logger] [info] incoming json: {"file":"","ip_address":"","ip_port":0,"ip_protocol":0,"mac_address":"","other_info":"","serial_number":"","serial_port":"COM3","timeout":0}
+[2022-02-18 19:20:40.128] [board_logger] [debug] use dyn lib: C:\Users\coppe\Desktop\SocialIdentityThreatGame\Biofeedback Prototype\GanglionLib.dll
+[2022-02-18 19:20:40.128] [board_logger] [trace] Board object created 1
+[2022-02-18 19:20:40.130] [board_logger] [debug] Library is loaded
+[2022-02-18 19:20:40.130] [board_logger] [info] use 15 as a timeout for device discovery and for callbacks
+[2022-02-18 19:20:40.130] [board_logger] [debug] ganglionlib initialized
+[2022-02-18 19:20:40.130] [board_logger] [info] mac address is not specified, try to find ganglion without it
+[2022-02-18 19:20:41.586] [board_logger] [trace] File Streamer, file: brainflow_data.csv, mods: w
+[2022-02-18 19:20:41.587] [board_logger] [info] use command b to start streaming
+[2022-02-18 19:20:41.641] [board_logger] [debug] start streaming
+[2022-02-18 19:26:47.731] [board_logger] [info] incoming json: {"file":"","ip_address":"","ip_port":0,"ip_protocol":0,"mac_address":"","other_info":"","serial_number":"","serial_port":"COM3","timeout":0}
+[2022-02-18 19:26:47.731] [board_logger] [debug] use dyn lib: C:\Users\coppe\Desktop\SocialIdentityThreatGame\Biofeedback Prototype\GanglionLib.dll
+[2022-02-18 19:26:47.731] [board_logger] [trace] Board object created 1
+[2022-02-18 19:26:47.732] [board_logger] [debug] Library is loaded
+[2022-02-18 19:26:47.732] [board_logger] [info] use 15 as a timeout for device discovery and for callbacks
+[2022-02-18 19:26:47.732] [board_logger] [debug] ganglionlib initialized
+[2022-02-18 19:26:47.732] [board_logger] [info] mac address is not specified, try to find ganglion without it
+[2022-02-18 19:26:49.131] [board_logger] [trace] File Streamer, file: brainflow_data.csv, mods: w
+[2022-02-18 19:26:49.132] [board_logger] [info] use command b to start streaming
+[2022-02-18 19:26:49.199] [board_logger] [debug] start streaming
+[2022-02-18 19:27:27.306] [board_logger] [info] incoming json: {"file":"","ip_address":"","ip_port":0,"ip_protocol":0,"mac_address":"","other_info":"","serial_number":"","serial_port":"COM3","timeout":0}
+[2022-02-18 19:27:27.307] [board_logger] [debug] use dyn lib: C:\Users\coppe\Desktop\SocialIdentityThreatGame\Biofeedback Prototype\GanglionLib.dll
+[2022-02-18 19:27:27.307] [board_logger] [trace] Board object created 1
+[2022-02-18 19:27:27.308] [board_logger] [debug] Library is loaded
+[2022-02-18 19:27:27.308] [board_logger] [info] use 15 as a timeout for device discovery and for callbacks
+[2022-02-18 19:27:27.308] [board_logger] [debug] ganglionlib initialized
+[2022-02-18 19:27:27.308] [board_logger] [info] mac address is not specified, try to find ganglion without it
+[2022-02-18 19:27:28.716] [board_logger] [trace] File Streamer, file: brainflow_data.csv, mods: w
+[2022-02-18 19:27:28.717] [board_logger] [info] use command b to start streaming
+[2022-02-18 19:27:28.784] [board_logger] [debug] start streaming
+[2022-02-18 19:28:34.254] [board_logger] [info] incoming json: {"file":"","ip_address":"","ip_port":0,"ip_protocol":0,"mac_address":"","other_info":"","serial_number":"","serial_port":"COM3","timeout":0}
+[2022-02-18 19:28:34.254] [board_logger] [debug] use dyn lib: C:\Users\coppe\Desktop\SocialIdentityThreatGame\Biofeedback Prototype\GanglionLib.dll
+[2022-02-18 19:28:34.254] [board_logger] [trace] Board object created 1
+[2022-02-18 19:28:34.255] [board_logger] [debug] Library is loaded
+[2022-02-18 19:28:34.255] [board_logger] [info] use 15 as a timeout for device discovery and for callbacks
+[2022-02-18 19:28:34.255] [board_logger] [debug] ganglionlib initialized
+[2022-02-18 19:28:34.255] [board_logger] [info] mac address is not specified, try to find ganglion without it
+[2022-02-18 19:28:35.647] [board_logger] [trace] File Streamer, file: brainflow_data.csv, mods: w
+[2022-02-18 19:28:35.648] [board_logger] [info] use command b to start streaming
+[2022-02-18 19:28:35.719] [board_logger] [debug] start streaming
+[2022-02-19 17:26:05.304] [board_logger] [info] incoming json: {"file":"","ip_address":"","ip_port":0,"ip_protocol":0,"mac_address":"","other_info":"","serial_number":"","serial_port":"COM3","timeout":0}
+[2022-02-19 17:26:05.305] [board_logger] [debug] use dyn lib: C:\Users\coppe\Desktop\SocialIdentityThreatGame\Biofeedback Prototype\GanglionLib.dll
+[2022-02-19 17:26:05.305] [board_logger] [trace] Board object created 1
+[2022-02-19 17:26:05.330] [board_logger] [debug] Library is loaded
+[2022-02-19 17:26:05.330] [board_logger] [info] use 15 as a timeout for device discovery and for callbacks
+[2022-02-19 17:26:05.330] [board_logger] [debug] ganglionlib initialized
+[2022-02-19 17:26:05.330] [board_logger] [info] mac address is not specified, try to find ganglion without it
+[2022-02-19 17:26:21.346] [board_logger] [error] failed to Open Ganglion Device 15
+[2022-02-19 18:13:52.911] [board_logger] [info] incoming json: {"file":"","ip_address":"","ip_port":0,"ip_protocol":0,"mac_address":"","other_info":"","serial_number":"","serial_port":"COM3","timeout":0}
+[2022-02-19 18:13:52.911] [board_logger] [debug] use dyn lib: C:\Users\coppe\Desktop\SocialIdentityThreatGame\Biofeedback Prototype\GanglionLib.dll
+[2022-02-19 18:13:52.911] [board_logger] [trace] Board object created 1
+[2022-02-19 18:13:52.914] [board_logger] [debug] Library is loaded
+[2022-02-19 18:13:52.914] [board_logger] [info] use 15 as a timeout for device discovery and for callbacks
+[2022-02-19 18:13:52.914] [board_logger] [debug] ganglionlib initialized
+[2022-02-19 18:13:52.914] [board_logger] [info] mac address is not specified, try to find ganglion without it
+[2022-02-19 18:13:52.914] [board_logger] [error] Make sure you provided correct port name and have permissions to open it(run with sudo/admin). And close all other apps using this port.
+[2022-02-19 18:13:52.914] [board_logger] [error] failed to Open Ganglion Device 18
+[2022-02-19 18:14:20.339] [board_logger] [info] incoming json: {"file":"","ip_address":"","ip_port":0,"ip_protocol":0,"mac_address":"","other_info":"","serial_number":"","serial_port":"COM3","timeout":0}
+[2022-02-19 18:14:20.339] [board_logger] [debug] use dyn lib: C:\Users\coppe\Desktop\SocialIdentityThreatGame\Biofeedback Prototype\GanglionLib.dll
+[2022-02-19 18:14:20.339] [board_logger] [trace] Board object created 1
+[2022-02-19 18:14:20.340] [board_logger] [debug] Library is loaded
+[2022-02-19 18:14:20.340] [board_logger] [info] use 15 as a timeout for device discovery and for callbacks
+[2022-02-19 18:14:20.340] [board_logger] [debug] ganglionlib initialized
+[2022-02-19 18:14:20.340] [board_logger] [info] mac address is not specified, try to find ganglion without it
+[2022-02-19 18:14:21.974] [board_logger] [trace] File Streamer, file: brainflow_data.csv, mods: w
+[2022-02-19 18:14:21.977] [board_logger] [info] use command b to start streaming
+[2022-02-19 18:14:22.032] [board_logger] [debug] start streaming
+[2022-02-19 18:15:20.983] [board_logger] [info] incoming json: {"file":"","ip_address":"","ip_port":0,"ip_protocol":0,"mac_address":"","other_info":"","serial_number":"","serial_port":"COM3","timeout":0}
+[2022-02-19 18:15:20.983] [board_logger] [debug] use dyn lib: C:\Users\coppe\Desktop\SocialIdentityThreatGame\Biofeedback Prototype\GanglionLib.dll
+[2022-02-19 18:15:20.983] [board_logger] [trace] Board object created 1
+[2022-02-19 18:15:20.984] [board_logger] [debug] Library is loaded
+[2022-02-19 18:15:20.984] [board_logger] [info] use 15 as a timeout for device discovery and for callbacks
+[2022-02-19 18:15:20.984] [board_logger] [debug] ganglionlib initialized
+[2022-02-19 18:15:20.984] [board_logger] [info] mac address is not specified, try to find ganglion without it
+[2022-02-19 18:15:22.393] [board_logger] [trace] File Streamer, file: brainflow_data.csv, mods: w
+[2022-02-19 18:15:22.393] [board_logger] [info] use command b to start streaming
+[2022-02-19 18:15:22.457] [board_logger] [debug] start streaming
+[2022-02-19 18:17:38.726] [board_logger] [info] incoming json: {"file":"","ip_address":"","ip_port":0,"ip_protocol":0,"mac_address":"","other_info":"","serial_number":"","serial_port":"COM3","timeout":0}
+[2022-02-19 18:17:38.726] [board_logger] [debug] use dyn lib: C:\Users\coppe\Desktop\SocialIdentityThreatGame\Biofeedback Prototype\GanglionLib.dll
+[2022-02-19 18:17:38.726] [board_logger] [trace] Board object created 1
+[2022-02-19 18:17:38.727] [board_logger] [debug] Library is loaded
+[2022-02-19 18:17:38.727] [board_logger] [info] use 15 as a timeout for device discovery and for callbacks
+[2022-02-19 18:17:38.727] [board_logger] [debug] ganglionlib initialized
+[2022-02-19 18:17:38.727] [board_logger] [info] mac address is not specified, try to find ganglion without it
+[2022-02-19 18:17:40.140] [board_logger] [trace] File Streamer, file: brainflow_data.csv, mods: w
+[2022-02-19 18:17:40.140] [board_logger] [info] use command b to start streaming
+[2022-02-19 18:17:40.202] [board_logger] [debug] start streaming
+[2022-02-19 18:18:33.455] [board_logger] [info] incoming json: {"file":"","ip_address":"","ip_port":0,"ip_protocol":0,"mac_address":"","other_info":"","serial_number":"","serial_port":"COM3","timeout":0}
+[2022-02-19 18:18:33.455] [board_logger] [debug] use dyn lib: C:\Users\coppe\Desktop\SocialIdentityThreatGame\Biofeedback Prototype\GanglionLib.dll
+[2022-02-19 18:18:33.455] [board_logger] [trace] Board object created 1
+[2022-02-19 18:18:33.456] [board_logger] [debug] Library is loaded
+[2022-02-19 18:18:33.456] [board_logger] [info] use 15 as a timeout for device discovery and for callbacks
+[2022-02-19 18:18:33.456] [board_logger] [debug] ganglionlib initialized
+[2022-02-19 18:18:33.456] [board_logger] [info] mac address is not specified, try to find ganglion without it
+[2022-02-19 18:18:34.880] [board_logger] [trace] File Streamer, file: brainflow_data.csv, mods: w
+[2022-02-19 18:18:34.880] [board_logger] [info] use command b to start streaming
+[2022-02-19 18:18:34.943] [board_logger] [debug] start streaming
+[2022-02-19 18:18:40.710] [board_logger] [info] incoming json: {"file":"","ip_address":"","ip_port":0,"ip_protocol":0,"mac_address":"","other_info":"","serial_number":"","serial_port":"COM3","timeout":0}
+[2022-02-19 18:18:40.710] [board_logger] [debug] use dyn lib: C:\Users\coppe\Desktop\SocialIdentityThreatGame\Biofeedback Prototype\GanglionLib.dll
+[2022-02-19 18:18:40.710] [board_logger] [trace] Board object created 1
+[2022-02-19 18:18:40.711] [board_logger] [debug] Library is loaded
+[2022-02-19 18:18:40.711] [board_logger] [info] use 15 as a timeout for device discovery and for callbacks
+[2022-02-19 18:18:40.711] [board_logger] [debug] ganglionlib initialized
+[2022-02-19 18:18:40.711] [board_logger] [info] mac address is not specified, try to find ganglion without it
+[2022-02-19 18:18:42.106] [board_logger] [trace] File Streamer, file: brainflow_data.csv, mods: w
+[2022-02-19 18:18:42.107] [board_logger] [info] use command b to start streaming
+[2022-02-19 18:18:42.169] [board_logger] [debug] start streaming
