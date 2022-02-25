@@ -13,7 +13,14 @@ public class HeartRateData : MonoBehaviour
     private double center_frequency = 92.5;
     private int bandwidth = 115;
     private int ring_buffer_size = 400;
+
+    //Note for serial_port:
+    //seems to give a different value depending on the dongle.
+    //Aaja: COM5. If it is set to COM3, then the game freezes and Unity has to be force closed.
+    //I guess we have to switch it depending on who is running.
     private string serial_port = "COM3";
+
+
     private int ecg_channel = 0;
 
     // Start is called before the first frame update
