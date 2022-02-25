@@ -32,7 +32,7 @@ public class HeartRateData : MonoBehaviour
             board_shim.prepare_session();
             board_shim.start_stream(ring_buffer_size, "file://brainflow_data.csv:w");
             sampling_rate = BoardShim.get_sampling_rate(board_id);
-            ecg_channels = BoardShim.get_ecg_channels(board_id); // CHANNELS 1-4
+            ecg_channels = BoardShim.get_ecg_channels(board_id);
             InvokeRepeating("ProcessData", sampling_interval, sampling_interval);
             Debug.Log("Brainflow streaming was started");
         }
@@ -49,7 +49,6 @@ public class HeartRateData : MonoBehaviour
             Debug.Log("NULL board_shim");
             return;
         }
-        Debug.Log(board_shim.get_board_data_count());
         double[,] data = board_shim.get_board_data();
         DataFilter.perform_bandpass(data.GetRow(ecg_channels[ecg_channel]), sampling_rate, center_frequency, bandwidth, 2, (int)FilterTypes.BUTTERWORTH, 0.0);
         DataFilter.remove_environmental_noise(data.GetRow(ecg_channels[ecg_channel]), sampling_rate, (int)NoiseTypes.SIXTY);
