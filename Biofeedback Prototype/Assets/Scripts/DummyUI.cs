@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Video;
 
 public class DummyUI : MonoBehaviour
 {
@@ -23,7 +24,10 @@ public class DummyUI : MonoBehaviour
     [SerializeField] private InkSettings settingsManager; //manages ink story settings.
     [SerializeField] private BasicInkExample bassy; //the story manager
     [SerializeField] private SoundManager SM; //sound manager
-    [SerializeField] private FadeManager fader; //sound manager
+    [SerializeField] private FadeManager fader; //fade manager
+
+    [SerializeField] private VideoPlayer vPlayer; //video player
+    public bool video_progressBlock = false;
 
     //survey data collection
     public static bool[] surveyData = new bool[5] { false, false, false, false, false };
@@ -46,6 +50,7 @@ public class DummyUI : MonoBehaviour
     [SerializeField] private Image portraitSlot; //a single slot.
 
     [SerializeField] private Sprite[] bgList;
+    [SerializeField] private Image whiteEngineersBgAddon;
     //all the bgs in the entire game. Legend, by index:
     //0: email
     //1: proom email
@@ -58,15 +63,35 @@ public class DummyUI : MonoBehaviour
     //8: scene9
     //9: doorwayopen_rm18
     //10: room1018
+    //11: white engineers
 
     [SerializeField] private Sprite[] portraitList;
-    //all the portraits in the  entire game. Legend, by index:
-    //0: asian engineer
+    //all the portraits in the  entire game. Legend, by index: (0-8)
+    //0: asian engineer (Zhang Wei)
     //1: black janitor
     //2: black receptionist
-    //3: hispanic marketing
-    //4: white engineer
-    //5: white financial
+    //3: hispanic janitor
+    //4: hispanic marketing (Paola Ortiz)
+    //5: white cybersecurity (Logan Stiles)
+    //6: white engineer (Jake Maxwell)
+    //7: white financial (Connor McDermott)
+    //8: white janitor
+
+    void Update()
+    {
+
+        if (video_progressBlock == true)
+        {
+            vPlayer.loopPointReached += stop_vidPlayer;
+        }
+    }
+    void stop_vidPlayer(UnityEngine.Video.VideoPlayer vp)
+    {      
+        video_progressBlock = false;
+        toggle_continueImage(true);
+        vPlayer.gameObject.SetActive(false);
+    }
+    
 
     public void click_continueArrow()
     {
@@ -105,8 +130,10 @@ public class DummyUI : MonoBehaviour
             }
             yield return new WaitForSeconds(settingsManager.get_waitTime());
         }
-        toggle_continueImage(true);
-        Debug.Log("finished displaying line. buildMe = " + buildMe);
+
+        if (video_progressBlock == false) toggle_continueImage(true);
+        
+        //Debug.Log("finished displaying line. buildMe = " + buildMe);
         bassy.enable_input();
     }
     public void play_button_click_sound()
@@ -147,6 +174,11 @@ public class DummyUI : MonoBehaviour
     void set_background(int bgIndex)
     {
         //fader.fade_to_black();
+        if (bgIndex == 11)
+        {
+            whiteEngineersBgAddon.gameObject.SetActive(true);
+            return;
+        }
         bg.sprite = bgList[bgIndex];
     }
     void set_portrait_slot(int whichSlot)
@@ -165,6 +197,13 @@ public class DummyUI : MonoBehaviour
         }
 
     }
+    void start_vPlayer()
+    {
+        Debug.Log("video started");
+        video_progressBlock = true;
+        vPlayer.Play();
+    }
+    
 
     void record_surveys_watched(int which)
     {
@@ -206,6 +245,10 @@ public class DummyUI : MonoBehaviour
         story.BindExternalFunction("set_portrait_slot", (int whichSlot) =>
         {
             this.set_portrait_slot(whichSlot);
+        });
+        story.BindExternalFunction("play_video", () =>
+        {
+            this.start_vPlayer();
         });
 
         //DATA COLLECTION

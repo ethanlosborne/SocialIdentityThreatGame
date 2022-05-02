@@ -20,7 +20,7 @@ public class HeartRateData : MonoBehaviour
     //seems to give a different value depending on the dongle.
     //Aaja: COM5. If it is set to COM3, then the game freezes and Unity has to be force closed.
     //I guess we have to switch it depending on who is running.
-    private string serial_port = "COM3";
+    private string serial_port = "COM5";
     
     private int ecg_channel = 0;
     private int sample_number = 1;

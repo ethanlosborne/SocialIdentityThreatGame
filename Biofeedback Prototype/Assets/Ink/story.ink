@@ -2,6 +2,7 @@
 EXTERNAL set_name(name) //string. displays the speaker's name.
 EXTERNAL set_background(bgIndex) //int. changes the bg image and uses a fade.
 EXTERNAL set_portrait_slot(whichSlot) //int. -1 to hide, 0-5 to show different characters.
+EXTERNAL play_video() //plays the video.
 EXTERNAL play_music(whichTrack) //int. plays a looping track from soundManager's music array.
 EXTERNAL play_sound(whichTrack) //int. plays a sound track once from soundManager's sound array.
 EXTERNAL stop_music() //stops music.
@@ -33,19 +34,23 @@ In the meantime, we would like to encourage you to learn a little more about our
 //choices next
 
 *   [Watch the video] \[I started watching the video.\]
-    //~ set_name("Emily Jacobs")
-    //Hello, I’m Emily Jacobs, Director of the Summer Internship Program at V-Inc. First, I’d like to say congratulations on making it this far in the interview process. This makes you just one of 50 applicants to make it through our highly rigorous and selective process! I want to welcome you to a brief introduction to our company, V-Inc.
 
-    //V-Inc was first established in 1999 as an I.T. training company. It eventually evolved to software development with a focus on customized software, which yielded phenomenal success. Today V-Inc is a 800 Billion dollar global corporation with an unrivaled portfolio of end to end cutting edge solutions and services from software product development, to block-chain technologies and other smart contract related products. Ushering businesses into a new era of technology is what we do best at V-//Inc. This is our mission.
+    // plays the video. Progress will be blocked while the video plays.
+    ~play_video()
 
-    //At V Inc we have the ability to make more of an impact on people and more of a change in one year than many people do in their lifetimes. The technology landscape is ever-changing. Six months can be the difference between obsolete and ingenious, so we constantly source the most brilliant, creative and talented young minds to join the team here at V-Inc. It's how we to maintain our lead as innovators in the industry.
-    //The summer internship program is one of, if not the most critical pipeline Axis Technologies uses to scout and train and recruit exceptional talent that we are confident will propel our company to the future. We typically graduate interns identified as exceptional into permanent positions within the company.
+    ~ set_name("Emily Jacobs")
+    Hello, I’m Emily Jacobs, Director of the Summer Internship Program at V-Inc. First, I’d like to say congratulations on making it this far in the interview process. This makes you just one of 50 applicants to make it through our highly rigorous and selective process! I want to welcome you to a brief introduction to our company, V-Inc.
+
+    V-Inc was first established in 1999 as an I.T. training company. It eventually evolved to software development with a focus on customized software, which yielded phenomenal success. Today V-Inc is a 800 Billion dollar global corporation with an unrivaled portfolio of end to end cutting edge solutions and services from software product development, to block-chain technologies and other smart contract related products. Ushering businesses into a new era of technology is what we do best at V-//Inc. This is our mission.
+
+    At V Inc we have the ability to make more of an impact on people and more of a change in one year than many people do in their lifetimes. The technology landscape is ever-changing. Six months can be the difference between obsolete and ingenious, so we constantly source the most brilliant, creative and talented young minds to join the team here at V-Inc. It's how we to maintain our lead as innovators in the industry.
+    The summer internship program is one of, if not the most critical pipeline Axis Technologies uses to scout and train and recruit exceptional talent that we are confident will propel our company to the future. We typically graduate interns identified as exceptional into permanent positions within the company.
 
     ~set_name("")
     * * (testimonials)[Watch testimonials from previous interns] \[I'm now watching testimonials from interns.\]
 
         * * * Jake Maxwell (White guy \#1, block chain data engineering intern)
-            ~set_portrait_slot(4)
+            ~set_portrait_slot(6)
             ~set_name("Jake Maxwell")
             ~record_surveys_watched(0)
             My name is Jake Maxwell, I’m a graduate intern here at V Inc. Just the process of coding is actually fun. It’s exciting to work here because unlike a lot of other tech companies, V Inc is on the cutting edge of developing block chain technologies, which is revolutionizing the way smart contracts are executed. Block chain is the future and V-Inc is literally the rocket that’s taking us there.
@@ -54,7 +59,7 @@ In the meantime, we would like to encourage you to learn a little more about our
             -> testimonials
 
         * * * Paola Ortiz (Hispanic girl with accent, marketing intern)
-            ~set_portrait_slot(3)
+            ~set_portrait_slot(4)
             ~set_name("Paola Ortiz")
             ~record_surveys_watched(1)
             My name is Paola Ortiz and I'm a junior at the University of Denver and I study Marketing and Communications. When I was young, I just looooved the jingles to commercials; I used to memorize TV commercials and act them out. It always fascinated me how one could see the beauty in every day things, and make others see that same beauty by playing with words.
@@ -64,7 +69,7 @@ In the meantime, we would like to encourage you to learn a little more about our
             -> testimonials
 
         * * * Connor McDermott (White guy \#2, financial analyst intern)
-            ~set_portrait_slot(5)
+            ~set_portrait_slot(7)
             ~set_name("Connor McDermott")
             ~record_surveys_watched(2)
             I’m Connor McDermott. I study Financial Mathematics at the Massachusetts Institute of Technology. I’m stationed within the finance division in the company and I must admit that I am having the time of my life learning about equity options and pricing V Inc stock for the financial markets.
@@ -84,7 +89,7 @@ In the meantime, we would like to encourage you to learn a little more about our
             -> testimonials
 
         * * * Logan Stiles (White guy \#3)
-            //~ set_portrait_slot(3) //Poor Logan Stiles has no portrait.
+            //~ set_portrait_slot(5)
             ~ set_name("Logan Stiles")
             ~ record_surveys_watched(4)
             Hi. I’m Logan Stiles, from Virginia. I’m a graduated intern in the Cyber security division at V Inc, now working full time here as a security analyst, where I work on several cyber-security measures. I love to code- always have, always will. I’ve been coding since I was 9 years old.
@@ -98,13 +103,8 @@ In the meantime, we would like to encourage you to learn a little more about our
 
     * * (interviewStart) [Continue with the interview] \[I decided to continue with the interview.\]
         \[To be continued...\]
-
-
-//- -> manipulating_social_interactions_waiting_room
 - -> enter_building_reception
-// Marj section END
 
-// Mason section START
 === enter_building_reception ===
 
     //~set_background(2) #TODO. I believe we're still missing this bg image.
@@ -112,12 +112,12 @@ In the meantime, we would like to encourage you to learn a little more about our
 
     On this day X has been invited to the company’s campus for an interview. Her appointment is set for 2:30pm. She walks into the building and checks in at the security desk.
 
-    ~set_portrait_slot(1)
+    //~set_portrait_slot(1) //?
 
     There are two security guards (men) at the front door—one Black, another Hispanic. X checks in at the security desk. She presents her interview card, and states that she is interviewing with Division D.
     Black Guard looks at her interview card and ID, checks her name on an ipad (or computer) and says: “10th Floor, Main reception area- right across the elevators.”
 
-    ~set_portrait_slot(-1)
+    //~set_portrait_slot(-1)
     ~set_background(3)
 
     X goes through security and is allowed into the foyer. It’s exquisite —well decorated, people in suits (men, mostly) walking about hurriedly, minding their own business. There seems to be a sense of urgency in this work environment.
@@ -142,7 +142,7 @@ In the meantime, we would like to encourage you to learn a little more about our
     X: [states that she is here for the internship interview]
 
     ~set_name("Receptionist")
-    Receptionist:  OHHH! I’m so sorry…we’re hosting 2 interviews today and one just wrapped up. What’s your name sweetie?
+    OHHH! I’m so sorry…we’re hosting 2 interviews today and one just wrapped up. What’s your name sweetie?
 
     ~set_name("X")
     [X states her names for the record].
@@ -167,6 +167,7 @@ In the meantime, we would like to encourage you to learn a little more about our
 
 ~set_portrait_slot(-1)
 ~set_background(6)
+~set_background(11) //add all the white engineer background characters. I think this is supposed to go here? Why isn't it part of the normal background image?
 
 X gets to Rm 1016. It is quite packed. She looks around. There are about 15 people waiting. Some are busy looking at their phones, others are chatting with each other…and some are reading books or just sitting and staring into space.
 There’s only one other woman in the room besides herself. This woman is Asian. Of the 14 men, 8 are white, and 6 are Asian.
@@ -231,7 +232,7 @@ After distraction task/ bougus survey (or maybe identity threat inducing one) �
 
 X walks across the hall to Rm 1018. On the walls are photos of executives… All White men. She opens the door and sees a panel of 4 interviewers sitting at a long table. 3 lean towards each other, whispering to each other. One is writing something in a folder.
 
-//~set_background(10) #TODO. when we have room 1018/background 10 made.
+~set_background(10)
 
 As she walks into the room, Interviewer \#5 comes in from a side door with a mug in hand. Looks at X and says
 
@@ -307,11 +308,6 @@ I know some women might find that offensive so…. I guess I’m wondering how c
 ******** \[insert response 2\]
             -> manipulating_TASK_Gender_social_identity_threat
 
-// Marj section END
-
-
-
-// Aaja section
 === manipulating_TASK_Gender_social_identity_threat ===
 
 ~set_name("Interviewer \#5")
