@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class WMGUI : MonoBehaviour
 {
+    [SerializeField] private WMSplashManager splash;
+
     [SerializeField] private Text testCounterLabel;
     [SerializeField] private Text nextButtonText;
 
@@ -21,11 +23,9 @@ public class WMGUI : MonoBehaviour
     public GameObject dataCanvas;
 
     public static int count;
-    // Start is called before the first frame update
-    void Start()
-    {   
-        StartCoroutine(WMCoroutineMed1());
-        dataCanvas.SetActive(false);
+    public void begin()
+    {
+        StartCoroutine(WMCoroutineMed1());        
     }
     // Handles switching of coroutines on button click
     public void next_test()
@@ -64,11 +64,11 @@ public class WMGUI : MonoBehaviour
                 StartCoroutine(WMCoroutineHard3());
                 break;
             default:
-                Debug.Log("Default case");
+                //Debug.Log("Default case");
                 //Application.Quit();
+                splash.show_ending();
                 break;
         }
-
     }
 
     void update_boxes(string b1, string b2, string b3, string b4)

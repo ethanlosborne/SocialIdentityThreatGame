@@ -1895,6 +1895,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: f577b0ce3303b44439b29443d6ae2547, type: 3}
   - {fileID: 21300000, guid: f51029d77061b164d98773a1d09e6eb0, type: 3}
   - {fileID: 21300000, guid: 05f8e70ad4898a94094cb0e16e84687e, type: 3}
+  whiteEngineersBgAddon: {fileID: 2113350048}
   portraitList:
   - {fileID: 21300000, guid: 79a1328f9efb8f94c867a086e2ac1d57, type: 3}
   - {fileID: 21300000, guid: d134a06d5d1815a4b855d198bb5c03de, type: 3}

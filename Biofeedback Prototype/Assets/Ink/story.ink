@@ -36,7 +36,9 @@ In the meantime, we would like to encourage you to learn a little more about our
 *   [Watch the video] \[I started watching the video.\]
 
     // plays the video. Progress will be blocked while the video plays.
-    ~play_video()
+    //~play_video() //It works, but the video clip is very long (~40 seconds.) I'll disable it for now.
+    //Also, it covers multiple lines of dialog in the single clip, but it would be better split in the way
+    //that the lines are broken here in the script.
 
     ~ set_name("Emily Jacobs")
     Hello, I’m Emily Jacobs, Director of the Summer Internship Program at V-Inc. First, I’d like to say congratulations on making it this far in the interview process. This makes you just one of 50 applicants to make it through our highly rigorous and selective process! I want to welcome you to a brief introduction to our company, V-Inc.
@@ -166,7 +168,7 @@ In the meantime, we would like to encourage you to learn a little more about our
 === manipulating_social_interactions_waiting_room ===
 
 ~set_portrait_slot(-1)
-~set_background(6)
+~set_background(6) //ERROR
 ~set_background(11) //add all the white engineer background characters. I think this is supposed to go here? Why isn't it part of the normal background image?
 
 X gets to Rm 1016. It is quite packed. She looks around. There are about 15 people waiting. Some are busy looking at their phones, others are chatting with each other…and some are reading books or just sitting and staring into space.

@@ -117,19 +117,27 @@ public class DummyUI : MonoBehaviour
     {
         textBox.text = "";
         string buildMe = "";
-        foreach (char letter in sentence.ToCharArray())
+        if (settingsManager.get_waitTime() > 0f)
         {
-            buildMe += letter;
-            if (nameBox.text == "")
+            foreach (char letter in sentence.ToCharArray())
             {
-                textBox.text = buildMe;
+                buildMe += letter;
+                if (nameBox.text == "")
+                {
+                    textBox.text = buildMe;
+                }
+                else
+                {
+                    textBox.text = "\"" + buildMe + "\"";
+                }
+                yield return new WaitForSeconds(settingsManager.get_waitTime());
             }
-            else
-            {
-                textBox.text = "\"" + buildMe + "\"";
-            }
-            yield return new WaitForSeconds(settingsManager.get_waitTime());
         }
+        else
+        {
+            textBox.text = "\"" + sentence + "\"";
+        }
+        
 
         if (video_progressBlock == false) toggle_continueImage(true);
         
@@ -178,6 +186,10 @@ public class DummyUI : MonoBehaviour
         {
             whiteEngineersBgAddon.gameObject.SetActive(true);
             return;
+        }
+        else
+        {
+            whiteEngineersBgAddon.gameObject.SetActive(false);
         }
         bg.sprite = bgList[bgIndex];
     }
