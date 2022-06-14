@@ -290,6 +290,7 @@ public class WMGUI : MonoBehaviour
 
     void accept_data()
     {
+        //Debug.Log("accept_data() cvalled");
         dataCanvas.SetActive(true);
         Answer1.interactable = true;
         Answer2.interactable = true;
