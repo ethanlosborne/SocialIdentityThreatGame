@@ -7,17 +7,32 @@ EXTERNAL play_music(whichTrack) //int. plays a looping track from soundManager's
 EXTERNAL play_sound(whichTrack) //int. plays a sound track once from soundManager's sound array.
 EXTERNAL stop_music() //stops music.
 EXTERNAL record_surveys_watched(which)
+EXTERNAL show_name_college() //displays the two input fields for the player to enter name and college into.
+EXTERNAL show_response_field() //displays the a general purpose input field for the player.
 //End external functions.
 //character limit: 658.
+
+//display with: {name}
+VAR name = "default name"
+VAR college = "default college"
 
 -> invitation
 
 === invitation ===
 
 ~set_name("")
+Hello. Before we continue, Please take a moment to enter your name and college.
+~show_name_college()
+...
+//OK. Nice to meet you {name} from {college}.
+//Now, here's a general question about something. Please do answer.
+//~show_response_field()
+//...
+//Thank you for answering.
+
 ~set_background(1)
 
-Hello X! We are delighted to announce after reviewing hundreds of applications, you’ve been selected to interview for a summer internship with V Inc. In the next day or so, one of our HR representatives will be calling you to schedule an interview date.
+Hello {name}! We are delighted to announce after reviewing hundreds of applications, you’ve been selected to interview for a summer internship with V Inc. In the next day or so, one of our HR representatives will be calling you to schedule an interview date.
 In the meantime, we would like to encourage you to learn a little more about our company by watching the informational video below. This video provides an overview about our summer internship program, and the company as a whole.
 Thank you and we look forward to meeting you very soon!
 
@@ -109,205 +124,239 @@ I got to do some pretty cool stuff that set me on the path to coding for life bu
 
 === enter_building_reception ===
 
-    ~set_background(2)
-    ~set_name("")
+~set_background(2)
+~set_name("")
 
-On this day X has been invited to the company’s campus for an interview. Her appointment is set for 2:30pm. She walks into the building and checks in at the security desk.
+You have arrived at V-Inc's company campus for your interview. It's 2:30 in the afternoon.
 
-//~set_portrait_slot(1) //?
-
-There are two security guards (men) at the front door—one Black, another Hispanic. X checks in at the security desk. She presents her interview card, and states that she is interviewing with Division D.
-Black Guard looks at her interview card and ID, checks her name on an ipad (or computer) and says: “10th Floor, Main reception area- right across the elevators.”
+//~show security desk and guards (men. one black, another hispanic)
+~set_portrait_slot(2)
+~set_name("Security Guard")
+OK, Miss {name}, you're good to go. You'll want to head on up to the 10th floor, main reception area—right across from the elevators.
 
 ~set_background(3)
 
-X goes through security and is allowed into the foyer. It’s exquisite —well decorated, people in suits (men, mostly) walking about hurriedly, minding their own business. There seems to be a sense of urgency in this work environment.
-X heads to the elevator. A cleaning lady (White woman) walks by with a cleaning cart and says ‘Hello’ to X as she continues on her way.
-X takes the elevator to the 10th floor. Walks straight to the reception area and meets receptionist; a Black woman in her mid-thirties, with a short Afro.
+//the episode with the cleaning lady.
+~set_portrait_slot(8)
+~set_name("Cleaning Lady")
+Hello.
 
 ~set_background(4)
 ~set_portrait_slot(2)
 ~set_name("Receptionist")
-//~show receptionist
 Good afternoon and welcome to Division D. How may I help you?
 
-    ~set_name("X")
-    [ this is free flow and X will have to state in her own words that she is there for the interview].
+//the player must state in her own words that she is here for the interview.
+//there are not enough contextual clues to let the player know what they should say: I should tell her I'm here for the interview.
+~set_name("")
+...
+~show_response_field()
 
-    ~set_name("Receptionist")
-    The interviews for the administrative assistant interviews position were done an hour ago. And that would have been down the hall, Room 1015. Sorry.
+~set_name("Receptionist")
+The interviews for the administrative assistant interviews position were done an hour ago. And that would have been down the hall, Room 1015. Sorry.
 
-    ~set_name("X")
-    X: [states that she is here for the internship interview]
+//I need to clarify that I'm here for the internship interview. //there are not enough contextual clues to let the player know what they should say.
+~set_name("")
+...
+~show_response_field()
 
-    ~set_name("Receptionist")
-    OHHH! I’m so sorry…we’re hosting 2 interviews today and one just wrapped up. What’s your name sweetie?
+~set_name("Receptionist")
+OHHH! I’m so sorry… We’re hosting 2 interviews today and one just wrapped up. What’s your name, sweetie?
 
-    ~set_name("X")
-    [X states her names for the record].
+~set_name("X")
+It's {name}.
 
-    ~set_name("Receptionist")
-    Types into a computer. Makes small talk.
-    Wow! Engineering huh? You must be a chop - you know? Genius! Over 1000 applications each year for those positions and only about 10 make the final cut.
+~set_name("Receptionist")
+Wow! Engineering huh? You must be a chop - you know? Genius! Over 1000 applications each year for those positions and only about 10 make the final cut.
 
-    ~set_name("")
-    Receptionist prints out a paper with a number on it.  Gives the paper to X.
+~set_name("")
+The receptionist prints out a paper with a number on it and passes it to you.
 
-    ~set_name("Receptionist")
-    OK. Your ticket number is D035. Go to the waiting area, room 1016-down the hall to your right-first door-- and wait for your number to be called over the intercom.
+~set_name("Receptionist")
+OK. Your ticket number is D035. Go to the waiting area, room 1016-down the hall to your right-first door-- and wait for your number to be called over the intercom.
 The interview room will be RM 1018 directly opposite the waiting area. Shouldn’t be a long wait. Good luck.
-    * * * * *  [Respond to the receptionist]
-        -> manipulating_social_interactions_waiting_room
-    * * * * * [Don't respond to the receptionist]
-        -> manipulating_social_interactions_waiting_room
+
+~set_name("")
+... //there are not enough contextual clues to let the player know what they should say.
+~show_response_field()
+
+-> manipulating_social_interactions_waiting_room
 
 === manipulating_social_interactions_waiting_room ===
 
-~set_portrait_slot(-1)
+~set_portrait_slot(-1) //there is no portrait for Lee
 ~set_background(6)
-~set_background(11) //add all the white engineer background characters. I think this is supposed to go here? Why isn't it part of the normal background image?
+~set_background(11) //add all the white engineer background characters. For some reason the asset is apart from the chairs.
 
-X gets to Rm 1016. It is quite packed. She looks around. There are about 15 people waiting. Some are busy looking at their phones, others are chatting with each other…and some are reading books or just sitting and staring into space.
-There’s only one other woman in the room besides herself. This woman is Asian. Of the 14 men, 8 are white, and 6 are Asian.
-
-X sits on the only available seat- next to an Asian man who begins to make small talk.
+//X sits on the only available seat- next to an Asian man who begins to make small talk.
+There's only one seat left, so you sit down there.
 
 ~set_name("Asian Guy")
 You’re here for the internship interview?
 
-~set_name("X")
-X: “yes/ [or whatever variation of response X gives]”
+~set_name("")
+...
+~show_response_field()
 
 
 ~set_name("Asian Guy")
 My name is Li Wang. You?
 
-//X: X
-"X Lastname."
+~set_name("{name}")
+{name}.
 
 ~set_name("Li")
 Cool. What college?
 
 ~set_name("X")
-X: [whatever college she provides—I think we should provide her a college as part of her character, going in].
+{college}.
 
 ~set_name("Li")
-Li: Sweet. Junior, M.I.T. (he says, pointing at himself). Looks a little packed but they call people in quickly. I shouldn’t be too long now. Gets nerve-wracking just waiting in a room full of like…super smart people.
-See that guy over there with the red shirt? Also from M.I.T. His dad works for google. I’ll bet you he has an ‘in’ already. And the chic in the blue suit? [points to Asian woman]- total badass. Like … genius level smart! Seriously. Rumor has it that the big companies are already scouting her for jobs after graduation.
+Sweet. Junior, M.I.T.
 
-~set_name("X")
-X: [responds however she responds].
+~set_name("")
+He says, pointing at himself.
 
 ~set_name("Li")
-I hear they hire mostly- well, last year at least—and the year before that- mostly M.I.T and Stanford grads. Like, most of the senior execs in this division graduated from either M.I.T, Yale, Harvard, Stanford or UCLA.
+It's a little packed but they call people in quickly. It shouldn’t be too long now. Gets nerve-wracking just waiting in a room full of like… super smart people.
+See that guy over there with the red shirt? Also from M.I.T. His dad works for Google. I’ll bet you he has an ‘in’ already. And the chick in the blue suit?— total badass. Like… genius level smart! Seriously. Rumor has it that the big companies are already scouting her for jobs after graduation.
 
-Intercom buzzes and calls out a number—D-031.
+~set_name("")
+...
+~show_response_field()
+
+~set_name("Li")
+I hear they hire mostly— well, last year at least—and the year before that— mostly M.I.T and Stanford grads. Like, most of the senior execs in this division graduated from either M.I.T, Yale, Harvard, Stanford or UCLA.
+
+~set_name("")
+The intercom buzzes and calls out a number: D-031.
 
 ~set_name("Li")
 That’s me! Gotta go! Good luck.
 
+~set_portrait_slot(2)
 ~set_background(7)
 ~set_name("")
-Receptionist enters...and goes to X.
+You notice the receptionist from earlier has come to find you.
 
 ~set_name("Receptionist")
-X? I'm sorry I forgot to give you these ... Can you complete these forms as soon as you can please?
+{name}? I'm sorry I forgot to give you these ... Can you complete these forms as soon as you can please?
+
+//X receives a link to a survey she should complete [survey is 2 minutes or less--]
+//there is no information about the forms? I can implement them, but what should the questions be? Or is this the Working memory challenge? (I don't think so)
 
 ~set_name("")
-X receives a link to a survey she should complete [survey is 2 minutes or less--]
-After distraction task/ bogus survey (or maybe identity threat inducing one) —intercom buzzes and X’s number is called. D-035.
+Finally, the intercom buzzes again and D-035 is called— it's your turn.
+
 -> manipulating_social_interactions_interview_room
 
 === manipulating_social_interactions_interview_room ===
+//interviewer names:
+//#1: Steve
+//#2: Sebastian
+//#3: Luke
+//#4: James
+//#5: Mark
 
 ~set_background(9)
-
-X walks across the hall to Rm 1018. On the walls are photos of executives… All White men. She opens the door and sees a panel of 4 interviewers sitting at a long table. 3 lean towards each other, whispering to each other. One is writing something in a folder.
+//X walks across the hall to Rm 1018. On the walls are photos of executives… All White men.
+You walk to room 1018.
 
 ~set_background(10)
-
-As she walks into the room, Interviewer \#5 comes in from a side door with a mug in hand. Looks at X and says
+//She opens the door and sees a panel of 4 interviewers sitting at a long table. 3 lean towards each other, whispering to each other. One is writing something in a folder.
 
 ~set_name("Interviewer \#5")
-We’re out of coffee. What’s the status on the purchase order Lynette made last week? We’re supposed to restock when inventory hits 25%. Could you follow up on that please? I hate to micromanage but this is really REALLY getting old!
+We’re out of coffee. What’s the status on the purchase order Lynette made last week? We’re supposed to restock when inventory hits 25%. Could you follow up on that please? I hate to micromanage but this is really, REALLY getting old!
 
 ~set_name("")
 He walks to sit in the empty chair at the panel.
 
-Interviewer \#3 points out that \#5 could be wrong about X: “ Er… wrong person, Stan. She’s not admin, she’s here for the interview. Right? Ms… X? D-035?”
+//Interviewer \#3 points out that \#5 could be wrong about X:
+~set_name("Interviewer \#3")
+Er… wrong person, Mark. She’s not admin, she’s here for the interview. Right? Miss… {name}? D-035?
 
-X: [nods, says yes, whatever—something affirmative].
+~set_name("")
+...
+~show_response_field()
 
 ~set_name("Interviewer \#5")
-Oh! Ok- have a seat Ms. X and let’s get started.
+Oh! Ok- have a seat Miss {name} and let’s get started.
 
-X sits opposite the panel.
+~set_name("")
+You sit opposite the panel.
 
 ~set_name("Interviewer \#1")
-Hello, X. Welcome to V, Inc. My name is A- this is B, C, D and E. We all are senior personnel in Division D- which is also one of the most crucial arms of the company. As a single division, we account for over 42% of the company’s annual revenue.
-
+Hello, X. Welcome to V, Inc. My name is Steve- this is Sebastian, Luke, James and Mark.
+~set_name("Steve")
+We all are senior personnel in Division D- which is also one of the most crucial arms of the company. As a single division, we account for over 42% of the company’s annual revenue.
 As you know, our company is rated among top \#3 in the industry. Our success is mostly a result of our innovation in the field. We develop cutting edge products and the rest of the industry –and the market as well-- looks to us to determine the direction of the future, right?
-
-But here’s the thing—the secret to our success lies in being able to tap talent, fresh talent. So we are constantly looking to push the envelope ourselves, in terms of what it means to be innovative and dominant in the field. So we look for and hire young people like yourself, who are not only talented, but also can bring to the table fresh, creative ideas.
-
+But here’s the thing—the secret to our success lies in being able to tap talent, fresh talent.
+So we are constantly looking to push the envelope ourselves, in terms of what it means to be innovative and dominant in the field. So we look for and hire young people like yourself, who are not only talented, but also can bring to the table fresh, creative ideas.
 Typically, the internship is a bridge to becoming an employee within the organization. We invest heavily in our interns because we don’t just see them as gophers—but as valuable, future employees.
 
-~set_name("Interviewer \#2")
+~set_name("Sebastian")
 yes and to what \#1 just said—because we are investing in you, we have very high standards and expectations around work quality and productivity.
 But I’ll say, should you be hired, you’ll have it made-even if you don’t end up with a position here.
 
-~set_name("Interviewer \#5")
+~set_name("Mark")
 And that’s what makes these internships so competitive. Having done an internship at V Inc is very attractive to a lot of companies out there—although to be honest, we tend to keep our interns- so the vetting process- of which this interview is a part—is very rigorous.
 We choose the best of the best. We receive about 1200 applications a year; interview about 50 candidates and only hire 12- a whopping 1%. So—you should consider it a success that you’ve made it this far.
 
-~set_name("Interviewer \#4")
-Alright, enough about us and the company. Tell us a little about yourself. I can see you’re a junior at [insert X’s college—definitely not the high end ones they come from].
+~set_name("James")
+Alright, enough about us and the company. Tell us a little about yourself. I can see you’re a junior at {college}.
 
-As \#4 mentions the college, 2 interviewers look at each other and then look down.
+~set_name("")
+You can't help but notice two of the interviewers exchange a look at that.
 
-~set_name("X")
-[states her college].
+~set_name("")
+...
+~show_response_field()
 
-~set_name("Interviewer \#1")
+~set_name("Steve")
 What are your skills and how do you think they can contribute to our division goals?
 
-~set_name("X")
-Responds [we should capture their responses potentially for analyses later]
+~set_name("")
+...
+~show_response_field()
 
-~set_name("Interviewer \#2")
+~set_name("Sebastian")
 What are you hoping to learn from us this summer?
 
-X: -----------
+~set_name("")
+...
+~show_response_field()
 
-~set_name("Interviewer \#3")
+~set_name("Luke")
 What’s your communication style? I ask because most of the senior employees that you will be interfacing with in Division D are men – and we generally tend to be straight shooters who do not mince words and tell it like it is.
-I know some women might find that offensive so…. I guess I’m wondering how comfortable you would feel about that level of communication.
+I know some women might find that offensive so… I guess I’m wondering how comfortable you would feel about that level of communication.
 
-X: -------
+~set_name("")
+...
+~show_response_field()
+
 -> manipulating_TASK_Gender_social_identity_threat
 
 === manipulating_TASK_Gender_social_identity_threat ===
 
-~set_name("Interviewer \#5")
-Alright! Thank you, X! It was very nice to meet you. We've enjoyed getting to know more about you and your technical skillset. Now, we're gonna switch gears a little bit and do something else.
+~set_name("Mark")
+Alright! Thank you, {name}! It was very nice to meet you. We've enjoyed getting to know more about you and your technical skillset. Now, we're gonna switch gears a little bit and do something else.
 
 As part of this interview, we will evaluate your problem-solving skills using a short problem-solving task.
 This task is very accurate and predictive of high-level problem-solving skills; typically people who do well on this task excel on the quantitative aspects of the job—which is critical for us.
-For that reason, scores on this task are usually weighted more than most other components of the interview; What is it, \#1? I think—50% of our decision to hire will be based on your performance on this task is that right?
+For that reason, scores on this task are usually weighted more than most other components of the interview; What is it, Steve? I think—50% of our decision to hire will be based on your performance on this task is that right?
 
 ~set_name("")
 Interviewer \#1 nods in agreement.
 
-~set_name("Interviewer \#5")
+~set_name("Mark")
 We will have a scoreboard up for you showing the performance of candidates who scored in the top 5%. Last year we had some of the highest, if not the highest, most competitive performers.
 Everyone interviewing this year—including you-- will have their performance rated or compared against these guys on the scoreboard…
-Ideally we’d be looking to hire those with scores comparable to or higher than last year’s top scores (although higher might be quite hard to beat).
+Ideally we’d be looking to hire those with scores comparable to or higher than last year’s top scores— although higher might be quite hard to beat.
 
-Show scoreboard—with 5 people and their percentile ranking (1-5%) also include a bogus score. The 5 people are 3 White men and 2 Asian men. Give them super White and Asian names e.g. Wyatt, Cheng, etc.
+//Show scoreboard—with 5 people and their percentile ranking (1-5%) also include a bogus score. The 5 people are 3 White men and 2 Asian men. Give them super White and Asian names e.g. Wyatt, Cheng, etc.
 
-~set_name("")
-X starts task.
-After completing task- X is asked a few questions in a survey (up to 5- I will supply these) about interest in working for the company, stereotype endorsement, etc.
+//X starts task.
+//After completing task- X is asked a few questions in a survey (up to 5- I will supply these) about interest in working for the company, stereotype endorsement, etc.
 
 -> END
 //Here, the script ends and the WM task starts. After finishing that, the game ends.

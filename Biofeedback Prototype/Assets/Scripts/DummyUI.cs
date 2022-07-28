@@ -13,13 +13,6 @@ public class DummyUI : MonoBehaviour
     //in unity, if you can change the colour, it means you have access to the image, so you could do
     //whatever you want with it. (e.g. change the sprite of the image itself.)
 
-    //After implementation, some notes:
-    //pay attention to where you want the function call to actually happen in the story.
-    //we show a lot of text at once and ink will run all the calls in each display block
-    //as soon as it can. this means that anytime you want to player to see a change in the ui,
-    //there must be a stop in ink before the next ui change.
-    //(a stop in ink could be something like a choice selection)
-
     //connections
     [SerializeField] private InkSettings settingsManager; //manages ink story settings.
     [SerializeField] private BasicInkExample bassy; //the story manager
@@ -68,9 +61,9 @@ public class DummyUI : MonoBehaviour
     [SerializeField] private Sprite[] portraitList;
     //all the portraits in the  entire game. Legend, by index: (0-8)
     //0: asian engineer (Zhang Wei)
-    //1: black janitor
+    //1: black security
     //2: black receptionist
-    //3: hispanic janitor
+    //3: hispanic security
     //4: hispanic marketing (Paola Ortiz)
     //5: white cybersecurity (Logan Stiles)
     //6: white engineer (Jake Maxwell)
@@ -181,7 +174,7 @@ public class DummyUI : MonoBehaviour
     }
     void set_background(int bgIndex)
     {
-        //fader.fade_to_black();
+        fader.fade_to_black();
         if (bgIndex == 11)
         {
             whiteEngineersBgAddon.gameObject.SetActive(true);
@@ -191,7 +184,7 @@ public class DummyUI : MonoBehaviour
         {
             whiteEngineersBgAddon.gameObject.SetActive(false);
         }
-        bg.sprite = bgList[bgIndex];
+        bg.sprite = bgList[bgIndex];       
     }
     void set_portrait_slot(int whichSlot)
     {
@@ -215,7 +208,58 @@ public class DummyUI : MonoBehaviour
         video_progressBlock = true;
         vPlayer.Play();
     }
-    
+
+    //player input data; set during runtime.
+    private string playerName;
+    private string playerCollege;
+    private List<string> playerResponses;
+    [SerializeField] private GameObject nameCollegeInputObj;
+    [SerializeField] private InputField nameField;
+    [SerializeField] private InputField collegeField;
+
+    [SerializeField] private GameObject responseObj;
+    [SerializeField] private InputField responseField;
+
+
+    void show_name_college()
+    {
+        nameCollegeInputObj.SetActive(true);
+        video_progressBlock = true;
+    }
+    public void collect_name_college_input()
+    {
+        //called on input button press.
+        //read the player's name and college text.
+
+        playerName = nameField.text;
+        playerCollege = collegeField.text;
+
+        bassy.story.variablesState["name"] = playerName;
+        bassy.story.variablesState["college"] = playerCollege;
+
+        //hide the input fields and allow story progression.
+        nameCollegeInputObj.SetActive(false);
+        video_progressBlock = false;
+        bassy.RefreshView();
+    }
+    public void show_response_field()
+    {
+        responseObj.SetActive(true);
+        video_progressBlock = true;
+    }
+    public void collect_response()
+    {
+        //reads the response from the input field and adds it to the response list.
+
+        string response = responseField.text;
+        responseField.text = "";
+        playerResponses.Add(response);
+
+        responseObj.SetActive(false);
+        video_progressBlock = false;
+        bassy.RefreshView();
+    }
+
 
     void record_surveys_watched(int which)
     {
@@ -267,6 +311,14 @@ public class DummyUI : MonoBehaviour
         story.BindExternalFunction("record_surveys_watched", (int which) =>
         {
             this.record_surveys_watched(which);
+        });
+        story.BindExternalFunction("show_name_college", () =>
+        {
+            this.show_name_college();
+        });
+        story.BindExternalFunction("show_response_field", () =>
+        {
+            this.show_response_field();
         });
     }
 
