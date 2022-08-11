@@ -6,22 +6,17 @@ using System;
 
 public class HeartRateManager : MonoBehaviour
 {
-    public Text hrText;
-    public string heartRatePacket;
-    public GameObject low_Heart;
-    public GameObject low_Medium_Heart;
-    public GameObject moderate_Heart;
-    public GameObject high_Heart;
-    public GameObject maximum_Heart;
-    private int integer_heart_rate;
+    [SerializeField] private Text hrText;
+    [SerializeField] private GameObject pointer;
+
+
+    private int integer_heart_rate = -1;
     private int updateCount = 0;
     private int shouldIncrement = 0;
 
-
     void Awake()
     {
-        hrText = this.gameObject.GetComponent<Text>();
-        var heartRatePacket = UnityEngine.Random.Range(60, 140);
+        int heartRatePacket = UnityEngine.Random.Range(60, 140);
         integer_heart_rate = heartRatePacket;
     }
     
@@ -42,42 +37,26 @@ public class HeartRateManager : MonoBehaviour
             integer_heart_rate = heartRatePacket;
         }
         hrText.text = integer_heart_rate.ToString();
-        if (integer_heart_rate > 60 && integer_heart_rate < 80)
-        {
-            low_Heart.SetActive(true);
-            low_Medium_Heart.SetActive(false);
-            moderate_Heart.SetActive(false);
-            high_Heart.SetActive(false);
-            maximum_Heart.SetActive(false);
-        } else if (integer_heart_rate >= 80 && integer_heart_rate < 100)
-        {
-            low_Heart.SetActive(false);
-            low_Medium_Heart.SetActive(true);
-            moderate_Heart.SetActive(false);
-            high_Heart.SetActive(false);
-            maximum_Heart.SetActive(false);
-        } else if (integer_heart_rate >= 100 && integer_heart_rate < 120)
-        {
-            low_Heart.SetActive(false);
-            low_Medium_Heart.SetActive(false);
-            moderate_Heart.SetActive(true);
-            high_Heart.SetActive(false);
-            maximum_Heart.SetActive(false);
-        } else if (integer_heart_rate >= 120 && integer_heart_rate < 140)
-        {
-            low_Heart.SetActive(false);
-            low_Medium_Heart.SetActive(false);
-            moderate_Heart.SetActive(false);
-            high_Heart.SetActive(true);
-            maximum_Heart.SetActive(false);
-        } else if (integer_heart_rate >= 140)
-        {
-            low_Heart.SetActive(false);
-            low_Medium_Heart.SetActive(false);
-            moderate_Heart.SetActive(false);
-            high_Heart.SetActive(false);
-            maximum_Heart.SetActive(true);
-        }
+        set_gauge(Math.Min(integer_heart_rate, 150));
+    }
+    void set_gauge(int hr)
+    {
+        //move the pointer along the gauge
+        //left (90 degrees) position: -371, 177
+        //mid (180 degrees) position: -338, 143.3
+        //right (270 degrees) position: -305, 177
+
+        //x transform coord = 11x/25 - 371
+        //y transform coord = 34x^2/5625 - 68x/75 + 177
+        //rotation = 6x / 5 + 90
+
+        float xCoord = (11f * hr / 25f) - 371f;
+        float yCoord = (32f * hr * hr / 5625f) - (68f * hr / 75f) + 177f;
+        float rotation = (6f * hr / 50) + 90f;
+
+        Vector3 newPos = new Vector3(xCoord, yCoord, 0);
+        pointer.transform.localPosition = newPos;
+        pointer.transform.rotation = Quaternion.Euler(0, 0, rotation);
     }
 
 }

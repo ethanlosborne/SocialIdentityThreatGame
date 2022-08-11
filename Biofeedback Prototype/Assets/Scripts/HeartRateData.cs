@@ -18,7 +18,7 @@ public class HeartRateData : MonoBehaviour
     
     //Note for serial_port:
     //seems to give a different value depending on the dongle.
-    //Aaja: COM5. If it is set to COM3, then the game freezes and Unity has to be force closed.
+    //Aaja's Note: COM5. If it is set to COM3, then the game freezes and Unity has to be force closed.
     //I guess we have to switch it depending on who is running.
     private string serial_port = "COM5";
     

@@ -70,6 +70,10 @@ public class DummyUI : MonoBehaviour
     //7: white financial (Connor McDermott)
     //8: white janitor
 
+    void Start()
+    {
+        playerResponses = new List<string>();
+    }
     void Update()
     {
 
@@ -174,7 +178,7 @@ public class DummyUI : MonoBehaviour
     }
     void set_background(int bgIndex)
     {
-        fader.fade_to_black();
+        //fader.fade_to_black(1f);
         if (bgIndex == 11)
         {
             whiteEngineersBgAddon.gameObject.SetActive(true);
@@ -184,8 +188,15 @@ public class DummyUI : MonoBehaviour
         {
             whiteEngineersBgAddon.gameObject.SetActive(false);
         }
-        bg.sprite = bgList[bgIndex];       
+        bg.sprite = bgList[bgIndex];
+        //StartCoroutine(set_background_helper(bgIndex));
     }
+    IEnumerator set_background_helper(int bgIndex)
+    {
+        yield return new WaitForSeconds(1f);
+        bg.sprite = bgList[bgIndex];
+    }
+
     void set_portrait_slot(int whichSlot)
     {
         //we have only one protrait slot. we show only one character at a time.

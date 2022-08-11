@@ -130,7 +130,7 @@ I got to do some pretty cool stuff that set me on the path to coding for life bu
 You have arrived at V-Inc's company campus for your interview. It's 2:30 in the afternoon.
 
 //~show security desk and guards (men. one black, another hispanic)
-~set_portrait_slot(2)
+~set_portrait_slot(1)
 ~set_name("Security Guard")
 OK, Miss {name}, you're good to go. You'll want to head on up to the 10th floor, main reception area—right across from the elevators.
 
@@ -149,21 +149,23 @@ Good afternoon and welcome to Division D. How may I help you?
 //the player must state in her own words that she is here for the interview.
 //there are not enough contextual clues to let the player know what they should say: I should tell her I'm here for the interview.
 ~set_name("")
-...
 ~show_response_field()
+...
+
 
 ~set_name("Receptionist")
 The interviews for the administrative assistant interviews position were done an hour ago. And that would have been down the hall, Room 1015. Sorry.
 
 //I need to clarify that I'm here for the internship interview. //there are not enough contextual clues to let the player know what they should say.
 ~set_name("")
-...
 ~show_response_field()
+...
+
 
 ~set_name("Receptionist")
 OHHH! I’m so sorry… We’re hosting 2 interviews today and one just wrapped up. What’s your name, sweetie?
 
-~set_name("X")
+~set_name("{name}")
 It's {name}.
 
 ~set_name("Receptionist")
@@ -177,8 +179,9 @@ OK. Your ticket number is D035. Go to the waiting area, room 1016-down the hall 
 The interview room will be RM 1018 directly opposite the waiting area. Shouldn’t be a long wait. Good luck.
 
 ~set_name("")
-... //there are not enough contextual clues to let the player know what they should say.
 ~show_response_field()
+... //there are not enough contextual clues to let the player know what they should say.
+
 
 -> manipulating_social_interactions_waiting_room
 
@@ -195,8 +198,9 @@ There's only one seat left, so you sit down there.
 You’re here for the internship interview?
 
 ~set_name("")
-...
 ~show_response_field()
+...
+
 
 
 ~set_name("Asian Guy")
@@ -208,7 +212,7 @@ My name is Li Wang. You?
 ~set_name("Li")
 Cool. What college?
 
-~set_name("X")
+~set_name("{name}")
 {college}.
 
 ~set_name("Li")
@@ -222,8 +226,9 @@ It's a little packed but they call people in quickly. It shouldn’t be too long
 See that guy over there with the red shirt? Also from M.I.T. His dad works for Google. I’ll bet you he has an ‘in’ already. And the chick in the blue suit?— total badass. Like… genius level smart! Seriously. Rumor has it that the big companies are already scouting her for jobs after graduation.
 
 ~set_name("")
-...
 ~show_response_field()
+...
+
 
 ~set_name("Li")
 I hear they hire mostly— well, last year at least—and the year before that— mostly M.I.T and Stanford grads. Like, most of the senior execs in this division graduated from either M.I.T, Yale, Harvard, Stanford or UCLA.
@@ -235,7 +240,6 @@ The intercom buzzes and calls out a number: D-031.
 That’s me! Gotta go! Good luck.
 
 ~set_portrait_slot(2)
-~set_background(7)
 ~set_name("")
 You notice the receptionist from earlier has come to find you.
 
@@ -245,6 +249,7 @@ You notice the receptionist from earlier has come to find you.
 //X receives a link to a survey she should complete [survey is 2 minutes or less--]
 //there is no information about the forms? I can implement them, but what should the questions be? Or is this the Working memory challenge? (I don't think so)
 
+~set_portrait_slot(-1)
 ~set_name("")
 Finally, the intercom buzzes again and D-035 is called— it's your turn.
 
@@ -265,28 +270,29 @@ You walk to room 1018.
 ~set_background(10)
 //She opens the door and sees a panel of 4 interviewers sitting at a long table. 3 lean towards each other, whispering to each other. One is writing something in a folder.
 
-~set_name("Interviewer \#5")
+~set_name("Luke")
 We’re out of coffee. What’s the status on the purchase order Lynette made last week? We’re supposed to restock when inventory hits 25%. Could you follow up on that please? I hate to micromanage but this is really, REALLY getting old!
 
 ~set_name("")
 He walks to sit in the empty chair at the panel.
 
 //Interviewer \#3 points out that \#5 could be wrong about X:
-~set_name("Interviewer \#3")
+~set_name("Luke")
 Er… wrong person, Mark. She’s not admin, she’s here for the interview. Right? Miss… {name}? D-035?
 
 ~set_name("")
-...
 ~show_response_field()
+...
 
-~set_name("Interviewer \#5")
+
+~set_name("Mark")
 Oh! Ok- have a seat Miss {name} and let’s get started.
 
 ~set_name("")
 You sit opposite the panel.
 
-~set_name("Interviewer \#1")
-Hello, X. Welcome to V, Inc. My name is Steve- this is Sebastian, Luke, James and Mark.
+~set_name("Steve")
+Hello, {name}. Welcome to V, Inc. My name is Steve- this is Sebastian, Luke, James and Mark.
 ~set_name("Steve")
 We all are senior personnel in Division D- which is also one of the most crucial arms of the company. As a single division, we account for over 42% of the company’s annual revenue.
 As you know, our company is rated among top \#3 in the industry. Our success is mostly a result of our innovation in the field. We develop cutting edge products and the rest of the industry –and the market as well-- looks to us to determine the direction of the future, right?
@@ -309,30 +315,34 @@ Alright, enough about us and the company. Tell us a little about yourself. I can
 You can't help but notice two of the interviewers exchange a look at that.
 
 ~set_name("")
-...
 ~show_response_field()
+...
+
 
 ~set_name("Steve")
 What are your skills and how do you think they can contribute to our division goals?
 
 ~set_name("")
-...
 ~show_response_field()
+...
+
 
 ~set_name("Sebastian")
 What are you hoping to learn from us this summer?
 
 ~set_name("")
-...
 ~show_response_field()
+...
+
 
 ~set_name("Luke")
 What’s your communication style? I ask because most of the senior employees that you will be interfacing with in Division D are men – and we generally tend to be straight shooters who do not mince words and tell it like it is.
 I know some women might find that offensive so… I guess I’m wondering how comfortable you would feel about that level of communication.
 
 ~set_name("")
-...
 ~show_response_field()
+...
+
 
 -> manipulating_TASK_Gender_social_identity_threat
 
@@ -346,7 +356,7 @@ This task is very accurate and predictive of high-level problem-solving skills; 
 For that reason, scores on this task are usually weighted more than most other components of the interview; What is it, Steve? I think—50% of our decision to hire will be based on your performance on this task is that right?
 
 ~set_name("")
-Interviewer \#1 nods in agreement.
+Steve nods in agreement.
 
 ~set_name("Mark")
 We will have a scoreboard up for you showing the performance of candidates who scored in the top 5%. Last year we had some of the highest, if not the highest, most competitive performers.

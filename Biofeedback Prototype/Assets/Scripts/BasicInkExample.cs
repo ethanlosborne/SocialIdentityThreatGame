@@ -58,7 +58,7 @@ public class BasicInkExample : MonoBehaviour {
             
         }        
         else if (story.currentChoices.Count > 0) // Display all the choices, if there are any!
-        {           
+        {
             for (int i = 0; i < story.currentChoices.Count; i++)
             {
                 Choice choice = story.currentChoices[i];
