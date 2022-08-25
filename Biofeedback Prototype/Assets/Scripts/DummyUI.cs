@@ -69,6 +69,7 @@ public class DummyUI : MonoBehaviour
     //6: white engineer (Jake Maxwell)
     //7: white financial (Connor McDermott)
     //8: white janitor
+    //9: Li 
 
     void Start()
     {

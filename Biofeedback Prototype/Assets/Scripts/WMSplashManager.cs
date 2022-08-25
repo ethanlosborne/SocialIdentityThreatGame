@@ -9,6 +9,7 @@ public class WMSplashManager : MonoBehaviour
 
     [SerializeField] private WMGUI game;
 
+    
     public void show_ending()
     {
         endingPage.gameObject.SetActive(true);

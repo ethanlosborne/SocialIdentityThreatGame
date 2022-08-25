@@ -23,11 +23,16 @@ public class WMGUI : MonoBehaviour
     public GameObject dataCanvas;
 
     public static int count;
+
+    //WM TEST
     public void begin()
     {
-        StartCoroutine(WMCoroutineMed1());        
+        //test the survey:
+        start_post_survey();
+        
+        //normal, start the WM test:
+        //StartCoroutine(WMCoroutineMed1());        
     }
-    // Handles switching of coroutines on button click
     public void next_test()
     {
         if (count == 5)
@@ -37,7 +42,6 @@ public class WMGUI : MonoBehaviour
 
         CoroutineSwitcher();       
     }
-
     public void CoroutineSwitcher()
     {
         wMCanvas.SetActive(true);
@@ -66,11 +70,10 @@ public class WMGUI : MonoBehaviour
             default:
                 //Debug.Log("Default case");
                 //Application.Quit();
-                splash.show_ending();
+                start_post_survey();
                 break;
         }
     }
-
     void update_boxes(string b1, string b2, string b3, string b4)
     {
         Box1.text = b1;
@@ -78,8 +81,6 @@ public class WMGUI : MonoBehaviour
         Box3.text = b3;
         Box4.text = b4;
     }
-
-
     IEnumerator WMCoroutineMed1()
     {
         update_boxes("7", "4", "5", "3");
@@ -278,8 +279,6 @@ public class WMGUI : MonoBehaviour
         accept_data();
         count++;
     }
-
-    //clears text areas after button click
     void ClearInputText() 
     {
         Answer1.text = "";
@@ -287,7 +286,6 @@ public class WMGUI : MonoBehaviour
         Answer3.text = "";
         Answer4.text = "";
     }
-
     void accept_data()
     {
         //Debug.Log("accept_data() cvalled");
@@ -298,5 +296,65 @@ public class WMGUI : MonoBehaviour
         Answer4.interactable = true;
     }
 
+    //SURVEY COLLECTION
+    //format: question, list of answers (max length 6)
+    [SerializeField] private Image surveyBg; 
+    private int surveyIndex;
+    [SerializeField] private Text surveyQuestionText;
+    [SerializeField] private Button[] surveyAnswers; //also control the text through here. It will be offset to the right.
+
+    private List<(string, List<string>)> surveyInformation = new List<(string, List<string>)>()
+    {
+        ("question 1", new List<string> {"answer 1", "answer 2", "answer 3"}),
+        ("question 2", new List<string> {"answer 1", "answer 2", "answer 3", "answer 4"}),
+        ("question 3", new List<string> {"answer 1", "answer 2"})
+    };
+
+    void start_post_survey()
+    {
+        //here we start the post survey. 
+        //We're collecting player answers here too.
+
+        //show first question:
+        surveyBg.gameObject.SetActive(true);
+        surveyIndex = 0;
+        show_question(surveyIndex);
+    }
+    void show_question(int index)
+    {
+        //use the date from questionList[index]
+        // -fill question text
+        // -show all answers
+        // -enable answer buttons
+        surveyQuestionText.text = surveyInformation[index].Item1;
+
+        //fill buttons for which we have answers
+        for(int i = 0; i < surveyInformation[index].Item2.Count; i++)
+        {
+            //turn on button
+            surveyAnswers[i].interactable = true;
+            surveyAnswers[i].transform.GetChild(0).gameObject.GetComponent<Text>().text = surveyInformation[index].Item2[i];
+        }
+        //hide for those which we do not
+        for (int i = surveyInformation[index].Item2.Count; i < surveyAnswers.Length; i++)
+        {
+            surveyAnswers[i].interactable = false;
+            surveyAnswers[i].transform.GetChild(0).gameObject.GetComponent<Text>().text = "";
+        }
+    }
+    public void next_survey_question()
+    {
+        surveyIndex += 1;
+        if (surveyIndex < surveyInformation.Count)
+        {
+            show_question(surveyIndex);
+        }
+        else
+        {
+            surveyBg.gameObject.SetActive(false);
+            splash.show_ending();
+        }
+    }
+    
 
 }

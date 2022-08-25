@@ -71,14 +71,7 @@ public class BasicInkExample : MonoBehaviour {
         else
         {
             //load the memory test scene.
-            SceneManager.LoadScene("WM Scene");
-
-            /*
-            Button choice = CreateChoiceView("End of story.\nRestart?");
-            choice.onClick.AddListener(delegate {
-                StartStory();
-            });
-            */
+            SceneManager.LoadScene(2);
         }
     }
 	

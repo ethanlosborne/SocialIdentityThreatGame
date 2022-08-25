@@ -194,6 +194,7 @@ The interview room will be RM 1018 directly opposite the waiting area. Shouldnâ€
 //X sits on the only available seat- next to an Asian man who begins to make small talk.
 There's only one seat left, so you sit down there.
 
+~set_portrait_slot(9)
 ~set_name("Asian Guy")
 Youâ€™re here for the internship interview?
 
