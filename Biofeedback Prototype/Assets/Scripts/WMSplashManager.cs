@@ -8,11 +8,15 @@ public class WMSplashManager : MonoBehaviour
     [SerializeField] private GameObject endingPage;
 
     [SerializeField] private WMGUI game;
+    [SerializeField] private dataToGSheet dataCollector;
 
-    
+
     public void show_ending()
     {
         endingPage.gameObject.SetActive(true);
+
+        //finally, send the collected answers to the google sheet
+        dataCollector.Send();
     }
 
     //quit button

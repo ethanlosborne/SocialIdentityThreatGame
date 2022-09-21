@@ -71,10 +71,6 @@ public class DummyUI : MonoBehaviour
     //8: white janitor
     //9: Li 
 
-    void Start()
-    {
-        playerResponses = new List<string>();
-    }
     void Update()
     {
 
@@ -224,7 +220,7 @@ public class DummyUI : MonoBehaviour
     //player input data; set during runtime.
     private string playerName;
     private string playerCollege;
-    private List<string> playerResponses;
+    public static List<string> playerResponses = new List<string>();
     [SerializeField] private GameObject nameCollegeInputObj;
     [SerializeField] private InputField nameField;
     [SerializeField] private InputField collegeField;
